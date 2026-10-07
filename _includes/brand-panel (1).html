@@ -1,0 +1,34 @@
+<!-- <aside class="brand-panel {% if page.layout == 'home' or page.url == '/' %}full{% else %}side{% endif %}"> -->
+<aside class="brand-panel {{ page.panel_class | default: 'side' }}">
+<a href="{{ '/' | relative_url }}" class="logo">hy</a>
+  <h1 class="site-title">{{ site.title }}</h1>
+  <p class="site-tagline">{{ site.description }}</p>
+
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="{{ '/' | relative_url }}">Accueil</a></li>
+      <li><a href="{{ '/competence/' | relative_url }}">Compétence</a></li>
+
+      <!-- Menu Portfolio avec sous-menu déroulant -->
+            <li class="has-submenu {% if page.url contains '/portfolio/' %}open{% endif %}">
+        <button type="button" class="submenu-toggle">
+          Portfolio <i class="fa-solid fa-chevron-down arrow-icon"></i>
+        </button>
+        <ul class="submenu">
+          <li><a href="{{ '/portfolio/graphisme.html' | relative_url }}">Graphisme</a></li>
+          <li><a href="{{ '/portfolio/motion.html' | relative_url }}">Motion design</a></li>
+          <li><a href="{{ '/portfolio/photo.html' | relative_url }}">Photographie</a></li>
+        </ul>
+      </li>
+
+      <li><a href="{{ '/cv.html' | relative_url }}">CV</a></li>
+    </ul>
+  </nav>
+
+  <div class="social-links">
+    <a href="#"><i class="fa-brands fa-github"></i></a>
+    <a href="#"><i class="fa-solid fa-x"></i></a>
+    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+    <a href="#"><i class="fa-solid fa-download"></i></a>
+  </div>
+</aside>

@@ -1,0 +1,21 @@
+title: "Arnaud PINOT"
+description: "Site portfolio personnel"
+baseurl: "" # Laisser vide si c'est la racine de votre domaine GitHub Pages
+url: ""     # Votre URL GitHub Pages (ex: https://votre-pseudo.github.io)
+
+# Configuration des 3 collections
+collections:
+  graphisme:
+    output: true
+    permalink: /graphisme/:name/
+  motion:
+    output: true
+    permalink: /motion/:name/
+  photos:
+    output: true
+    permalink: /photos/:name/
+
+
+# Moteur de conversion Markdown
+kramdown:
+  input: GFM

@@ -1,0 +1,24 @@
+---
+layout: default
+---
+   <button class="mobile-menu-btn" aria-label="Menu Mobile">
+  ☰
+</button>
+
+<div class="page-layout">
+  {% include brand-panel.html %}
+
+  <main class="main-content">
+
+    <header class="header-top">
+      <h2 class="page-title">{{ page.title }}</h2>
+      {% if page.description %}
+        <p class="page-description">{{ page.description }}</p>
+      {% endif %}
+    </header>
+
+    <section class="content-body">
+      {{ content }}
+    </section>
+  </main>
+</div>
