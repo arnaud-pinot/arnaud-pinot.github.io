@@ -1,13 +1,13 @@
 ---
 layout: project
 title: "Graphisme et mise en page"
-client: "L'Antenne"
-description: Annuaire du fret aérien regroupant les informations réglementaires et un listing
-année: de 2019 à 2024
-pages: 320 pages
-thumb: "/assets/img/480x360-antenne.jpg"
-image1: "/assets/img/antenne_02.png"
-image2: "/assets/img/antenne_01.png"
+client: "Annuaire Supply Chain"
+description: Annuaire de la Supply Chain regroupant les informations fournisseurs et un listing
+année: de 2014 à 2024
+pages: 70 pages
+thumb: "/assets/img/480x360_scm.jpg"
+image1: "/assets/img/scm_01.png"
+image2: "/assets/img/scm_10-11.png"
 tools: ["InDesign", "Illustrator", "Photoshop"]
 ---
 

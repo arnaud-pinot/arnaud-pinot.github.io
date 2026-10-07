@@ -8,7 +8,8 @@
   /* Vos autres variables existantes */
   --primary-color: #0b4353;
   --text-color: #333;
-  --sidebar-width: 360px;
+  --sidebar-width: 30%;
+
 }
 
 * {
@@ -38,7 +39,9 @@ h1, h2, h3, h4, h5, h6,
   top: 0;
   left: 0;
   height: 100vh;
-  background: linear-gradient(rgba(11, 67, 83, 1), rgba(11, 67, 83, 1));
+/*  background: linear-gradient(rgba(11, 67, 83, 1), rgba(11, 67, 83, 1));*/
+/*  background: linear-gradient(140deg, #14414f 60%, #145568, #14414f);*/
+  background: linear-gradient(210deg, #14414f 60%, #145568);
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -72,6 +75,17 @@ h1, h2, h3, h4, h5, h6,
   font-family: Georgia, serif;
   text-decoration: none;
   color: #fff;
+}
+
+.logo img {
+  view-transition-name: site-portrait;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  border-radius: 160px;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+
 }
 
 .site-title {
@@ -267,7 +281,7 @@ h1, h2, h3, h4, h5, h6,
 /* GRILLE SHOWCASE ET ANIMATIONS */
 .showcase-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 2rem;
 }
 
@@ -276,16 +290,34 @@ h1, h2, h3, h4, h5, h6,
   overflow: hidden;
   background: #fff;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s, box-shadow 0.2s;
   opacity: 0;
-  transform: translateY(20px);
+
+  /* Animation d'entrée au chargement */
   animation: fadeInUp 0.5s ease forwards;
+
+  /* Transition fluide et réactive pour le hover (0.3s au lieu de 1s) */
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+/*  will-change: transform, box-shadow;*/
 }
 
+/* Effet au survol (hover) */
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
 }
+
+.card-preview {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+  /* Active le zoom fluide de l'image */
+  transition: transform 0.4s ease;
+}
+
+/*.card:hover .card-preview {
+  transform: scale(1.03); /* Zoom très léger et fluide sur l'image */
+}*/
 
 .card:nth-child(1) { animation-delay: 0.1s; }
 .card:nth-child(2) { animation-delay: 0.2s; }
@@ -295,15 +327,18 @@ h1, h2, h3, h4, h5, h6,
 .card:nth-child(6) { animation-delay: 0.6s; }
 
 @keyframes fadeInUp {
-  to {
+  0% {
+    opacity: 0;
+/*    transform: translateY(20px);*/
+  }
+  100% {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 .card-preview {
   width: 100%;
-  height: 180px;
+  height: 360px;
   object-fit: cover;
   display: block;
 }
@@ -325,31 +360,39 @@ h1, h2, h3, h4, h5, h6,
   color: #777;
 }
 
-/* =========================================================
-   ADAPTATION MOBILE & TABLETTE (< 900px)
-   ========================================================= */
-@media (max-width: 900px) {
-  .mobile-menu-btn {
-    display: flex;
-  }
+.project-header {
+  padding-bottom: 50px;
+}
 
-  .brand-panel.side {
-    width: 100vw;
-    transform: translateX(-100%);
-    opacity: 0;
-    pointer-events: none;
-  }
+.project-body {
+  padding-bottom: 50px;
+}
 
-  .brand-panel.side.mobile-open {
-    transform: translateX(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
+.project-title {
+  text-align:center;
+}
 
-  .main-content {
-    margin-left: 0 !important;
-    padding: 5rem 1.5rem 2.5rem 1.5rem;
-  }
+.project-detail {
+  max-width: 1280px;
+}
+
+.project-image {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  max-width: 1024px;
+
+}
+.project-image :nth-child(1) { animation-delay: 0.1s; }
+.project-image:nth-child(2) { animation-delay: 0.2s; }
+.project-image:nth-child(3) { animation-delay: 0.3s; }
+.project-image:nth-child(4) { animation-delay: 0.4s; }
+.project-image:nth-child(5) { animation-delay: 0.5s; }
+.project-image:nth-child(6) { animation-delay: 0.6s; }
+
+.project-image img {
+  text-align:center;
+  width:100%;
+
 }
 
 /* =========================================================
@@ -386,7 +429,7 @@ h1, h2, h3, h4, h5, h6,
   transition: opacity 0.5s ease, transform 0.5s ease, margin-left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Animation native à l'arrivée sur la page */
-  animation: pageEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: pageEnter 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* État lors de la sortie (au clic JS) */
@@ -404,4 +447,61 @@ h1, h2, h3, h4, h5, h6,
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+
+/* =========================================================
+ *  ADAPTATION MOBILE & TABLETTE (< 900px)
+ *  ========================================================= */
+@media (max-width: 1280px) {
+  .brand-panel.side {
+    width: 340px;
+  }
+}
+
+@media (max-width: 900px) {
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .brand-panel.side {
+    width: 100vw;
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .brand-panel.side.mobile-open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+    padding: 5rem 1.5rem 2.5rem 1.5rem;
+  }
+}
+/* Activer les transitions natives entre fichiers HTML */
+@view-transition {
+  navigation: auto;
+}
+
+/* Conserver le panneau bleu d'une page à l'autre */
+.brand-panel {
+  view-transition-name: site-brand-panel;
+}
+
+/* Conserver la photo/logo sans rechargement pendant le slide */
+.logo img {
+  view-transition-name: site-portrait;
+  decoding: sync;
+}
+
+/* Durée et fluidité de la transition */
+::view-transition-group(site-brand-panel),
+::view-transition-group(site-portrait) {
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }

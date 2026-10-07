@@ -5,6 +5,7 @@ layout: default
   {% include brand-panel.html %}
 
   <main class="main-content">
+  <a href="javascript:history.back()" class="btn-back">← Retour au portfolio</a>
     <article class="project-detail">
       <header class="project-header">
         <h1 class="project-title">{{ page.title }}</h1>
@@ -20,7 +21,7 @@ layout: default
       </header>
 
       {% if page.image1 %}
-        <div class="project-hero-image">
+        <div class="project-image">
           <img src="{{ page.image1 | relative_url }}" alt="{{ page.title }}">
         </div>
       {% endif %}
@@ -31,21 +32,20 @@ layout: default
       </section>
 
       {% if page.image2 %}
-        <div class="project-hero-image">
+        <div class="project-image">
           <img src="{{ page.image2 | relative_url }}" alt="{{ page.title }}">
         </div>
       {% endif %}
 
       {% if page.image3 %}
-        <div class="project-hero-image">
+        <div class="project-image">
           <img src="{{ page.image3 | relative_url }}" alt="{{ page.title }}">
         </div>
       {% endif %}
 
-      <!-- Bouton de retour -->
       <footer class="project-footer">
-        <a href="javascript:history.back()" class="btn-back">← Retour au portfolio</a>
       </footer>
-    </article>
+
+      </article>
   </main>
 </div>
