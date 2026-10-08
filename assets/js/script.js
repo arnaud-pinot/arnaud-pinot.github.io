@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fonction de chargement Ajax sans refresh
   async function loadPage(url) {
     try {
-      // 1. Charger le code HTML de la nouvelle page en arrière-plan
       const response = await fetch(url);
       const htmlText = await response.text();
 
@@ -32,10 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const newMainContent = newDoc.querySelector(".main-content");
       let currentMainContent = document.querySelector(".main-content");
 
-      // 2. Déterminer si la cible est la page d'accueil
       const isGoingHome = url === "/" || url.endsWith("index.html") || url === "./";
 
-      // 3. Faire glisser le panneau latéral (Side <-> Full)
+      // 1. Déplacement du panneau latéral
       if (brandPanel) {
         if (isGoingHome) {
           brandPanel.classList.remove("side");
@@ -46,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      // 4. Mettre à jour l'accordéon Portfolio si on navigue dans le menu
+      // 2. Gestion du sous-menu Portfolio
       const hasSubmenu = document.querySelector(".has-submenu");
       if (hasSubmenu) {
         if (url.includes("graphisme") || url.includes("motion") || url.includes("photos") || url.includes("portfolio")) {
@@ -54,25 +52,34 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      // 5. Remplacer uniquement le contenu principal (.main-content)
+      // 3. Remplacement du contenu et RELANCE DE L'ANIMATION CSS
       if (newMainContent) {
         if (!currentMainContent) {
           currentMainContent = document.createElement("main");
           currentMainContent.className = "main-content";
           document.body.appendChild(currentMainContent);
         }
+
+        // Retirer d'abord la classe d'animation si elle y était déjà
+        currentMainContent.classList.remove("animate-enter");
+
+        // Injection du nouveau contenu
         currentMainContent.innerHTML = newMainContent.innerHTML;
+
+        // Astuce : Forcer le 'reflow' pour que le navigateur enregistre le retrait de la classe
+        void currentMainContent.offsetWidth;
+
+        // Ajouter la classe pour déclencher l'animation
+        currentMainContent.classList.add("animate-enter");
       } else if (currentMainContent && isGoingHome) {
-        // Si retour sur l'accueil et qu'il n'y a pas de main-content
         currentMainContent.innerHTML = "";
       }
 
-      // 6. Mettre à jour le titre et l'URL du navigateur sans recharger
+      // 4. Mise à jour du titre et de l'URL
       document.title = newDoc.title;
       history.pushState({}, "", url);
 
     } catch (err) {
-      // Fallback si le fetch échoue
       console.warn("Erreur Ajax, redirection classique :", err);
       window.location.href = url;
     }

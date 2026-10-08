@@ -247,7 +247,6 @@ h1, h2, h3, h4, h5, h6,
    ========================================================= */
 .main-content {
   margin-left: var(--sidebar-width);
-  max-width: 1280px;
   min-height: 100vh;
   padding: 3.5rem 4rem;
   background-color: #ffffff;
@@ -267,7 +266,7 @@ h1, h2, h3, h4, h5, h6,
 
 .page-title {
   font-size: 2.5rem;
-  font-family: var(--font-family-heading);
+  font-family: Georgia, serif;
   margin-bottom: 0.5rem;
   color: #111;
 }
@@ -283,7 +282,6 @@ h1, h2, h3, h4, h5, h6,
   display: grid;
   grid-template-columns: 1fr; /* 1 colonne par défaut (Mobile) */
   gap: 2rem;
-  max-width: 1400px;
 }
 
 .card {
@@ -522,7 +520,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* Grand écran (3 colonnes max) */
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .showcase-grid {
     grid-template-columns: repeat(3, 1fr);
   }
