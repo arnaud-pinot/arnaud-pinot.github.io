@@ -2,7 +2,7 @@
 layout: page
 title: "Compétences"
 description: "Mes compétences en infographie, motion design, photographie et informatique & réseaux."
-permalink: /competence.html
+permalink: /competence/
 ---
 
 <div class="skills-container">
