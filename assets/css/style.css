@@ -751,3 +751,39 @@ h1, h2, h3, h4, h5, h6,
 .gallery-item:hover img {
   transform: scale(1.02);
 }
+/* =========================================================
+ *  ADAPTATION MOBILE & TABLETTE (< 900px)
+ *  ========================================================= */
+@media (max-width: 900px) {
+  /* Forcer l'affichage du bouton hamburger sur mobile */
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+
+  /* Sur mobile, la sidebar latérale est masquée par défaut */
+  .brand-panel.side {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100vh;
+    z-index: 200;
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  /* Quand le menu est ouvert via le bouton hamburger */
+  .brand-panel.side.mobile-open {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Le contenu principal prend toute la largeur sur mobile */
+  .main-content {
+    margin-left: 0 !important;
+    padding: 4.5rem 1.25rem 2.5rem 1.25rem !important;
+  }
+}
