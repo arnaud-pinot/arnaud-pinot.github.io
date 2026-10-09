@@ -1,6 +1,7 @@
 ---
 layout: project
-title: "Graphisme et mise en page"
+title: "Annuaire Supply Chain"
+category: graphisme
 client: "Annuaire Supply Chain"
 description: Annuaire de la Supply Chain regroupant les informations fournisseurs et un listing
 année: de 2014 à 2024

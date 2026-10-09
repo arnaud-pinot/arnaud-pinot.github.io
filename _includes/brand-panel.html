@@ -9,6 +9,7 @@
     <ul class="nav-menu">
       <li><a href="{{ '/' | relative_url }}">Accueil</a></li>
       <li><a href="{{ '/competence/' | relative_url }}">Compétence</a></li>
+      <li><a href="{{ '/cv.html' | relative_url }}">CV</a></li>
 
       <!-- Si l'URL contient graphisme, photo ou motion, on garde open -->
 <li class="has-submenu {% if page.url contains 'graphisme' or page.url contains 'motion' or page.url contains 'photo' or page.url contains 'portfolio' %}open{% endif %}">        <button type="button" class="submenu-toggle">
@@ -21,7 +22,6 @@
         </ul>
       </li>
 
-      <li><a href="{{ '/cv.html' | relative_url }}">CV</a></li>
     </ul>
   </nav>
 

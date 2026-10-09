@@ -7,7 +7,7 @@ permalink: /photos/
 <div class="photo-grid">
   {% for photo in site.data.photos %}
     <a href="{{ photo.full | relative_url }}" class="photo-item" data-full="{{ photo.full | relative_url }}">
-      <img src="{{ photo.thumb | relative_url }}" alt="{{ photo.alt }}" loading="lazy">
+      <img src="{{ photo.thumb | relative_url }}" loading="lazy">
     </a>
   {% endfor %}
 </div>

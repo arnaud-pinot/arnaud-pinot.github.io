@@ -1,6 +1,7 @@
 ---
 layout: project
 title: "Catalogue La Maison du Whisky"
+category: graphisme
 client: "La Maison du Whisky"
 description: "Conception graphique et mise en page d'un catalogue de sélection raffinée de whiskies."
 thumb: "/assets/img/480x360-whisky.jpg"

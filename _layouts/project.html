@@ -5,47 +5,154 @@ layout: default
   {% include brand-panel.html %}
 
   <main class="main-content">
-  <a href="javascript:history.back()" class="btn-back">← Retour au portfolio</a>
     <article class="project-detail">
+      
+<!-- Navigation : Fil d'Ariane dynamique et cliquable -->
+<nav class="project-nav" aria-label="Fil d'Ariane">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{{ '/' | relative_url }}">Accueil</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="{{ '/portfolio/' | relative_url }}">Portfolio</a>
+    </li>
+
+    {% assign proj_cat = page.category | default: page.collection %}
+    {% if proj_cat and proj_cat != "posts" %}
+      <li class="breadcrumb-item">
+        <a href="{{ '/' | append: proj_cat | append: '/' | relative_url }}">{{ proj_cat | capitalize }}</a>
+      </li>
+    {% endif %}
+
+    <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+  </ol>
+
+  <!-- Bouton Retour -->
+  {% if proj_cat and proj_cat != "posts" %}
+    <a href="{{ '/' | append: proj_cat | append: '/' | relative_url }}" class="btn-back">
+      <svg class="btn-back-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      <span>Retour</span>
+    </a>
+  {% else %}
+    <a href="{{ '/portfolio/' | relative_url }}" class="btn-back">
+      <svg class="btn-back-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      <span>Retour</span>
+    </a>
+  {% endif %}
+</nav>
+
+      <!-- En-tête du projet -->
       <header class="project-header">
         <h1 class="project-title">{{ page.title }}</h1>
         {% if page.subtitle %}
           <p class="project-subtitle">{{ page.subtitle }}</p>
         {% endif %}
 
-        <!-- Métadonnées du projet (Client, outils, etc.) -->
-        <div class="project-meta">
-          {% if page.client %}<span class="meta-item"><strong>Client :</strong> {{ page.client }}</span>{% endif %}
-          {% if page.tools %}<span class="meta-item"><strong>Outils :</strong> {{ page.tools | join: ", " }}</span>{% endif %}
+        {% if page.description %}
+          <p class="project-description">{{ page.description }}</p>
+        {% endif %}
+
+        <!-- Fiche Métadonnées -->
+        <div class="project-meta-grid">
+          {% if page.client %}
+            <div class="meta-card">
+              <span class="meta-label">Client</span>
+              <span class="meta-value">{{ page.client }}</span>
+            </div>
+          {% endif %}
+
+          {% assign date_val = page['année'] | default: page.annee | default: page.date_publi %}
+          {% if date_val %}
+            <div class="meta-card">
+              <span class="meta-label">Période / Année</span>
+              <span class="meta-value">{{ date_val }}</span>
+            </div>
+          {% endif %}
+
+          {% if page.pages %}
+            <div class="meta-card">
+              <span class="meta-label">Volume</span>
+              <span class="meta-value">{{ page.pages }}</span>
+            </div>
+          {% endif %}
+
+          {% if page.tools %}
+            <div class="meta-card">
+              <span class="meta-label">Outils</span>
+              <div class="meta-tags">
+                {% for tool in page.tools %}
+                  <span class="tag">{{ tool }}</span>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
         </div>
       </header>
 
-      {% if page.image1 %}
-        <div class="project-image">
-          <img src="{{ page.image1 | relative_url }}" alt="{{ page.title }}">
+      <!-- Image à la une (Hero Image) - Structure directe comme photos.md -->
+      {% assign hero_image = page.image1 | default: page.image %}
+      {% if hero_image %}
+        <div class="project-hero-image">
+          <a href="{{ hero_image | relative_url }}" class="photo-item" data-full="{{ hero_image | relative_url }}">
+            <img src="{{ hero_image | relative_url }}" alt="{{ page.title }}" loading="lazy">
+          </a>
         </div>
       {% endif %}
 
-      <!-- Contenu rédigé en Markdown -->
+      <!-- Contenu Markdown -->
       <section class="project-body">
         {{ content }}
       </section>
 
-      {% if page.image2 %}
-        <div class="project-image">
-          <img src="{{ page.image2 | relative_url }}" alt="{{ page.title }}">
+      <!-- Galerie d'images secondaires - Alignée exactement sur photos.md -->
+      {% if page.image2 or page.image3 %}
+        <div class="photo-grid">
+          {% if page.image2 %}
+            <a href="{{ page.image2 | relative_url }}" class="photo-item" data-full="{{ page.image2 | relative_url }}">
+              <img src="{{ page.image2 | relative_url }}" alt="{{ page.title }} - détail 1" loading="lazy">
+            </a>
+          {% endif %}
+
+          {% if page.image3 %}
+            <a href="{{ page.image3 | relative_url }}" class="photo-item" data-full="{{ page.image3 | relative_url }}">
+              <img src="{{ page.image3 | relative_url }}" alt="{{ page.title }} - détail 2" loading="lazy">
+            </a>
+          {% endif %}
         </div>
       {% endif %}
 
-      {% if page.image3 %}
-        <div class="project-image">
-          <img src="{{ page.image3 | relative_url }}" alt="{{ page.title }}">
-        </div>
-      {% endif %}
-
+      <!-- Pied de page -->
       <footer class="project-footer">
+{% assign cat_path = page.category | default: page.collection %}
+
+{% if cat_path and cat_path != "posts" %}
+  <a href="{{ '/' | append: cat_path | append: '/' | relative_url }}" class="btn-back">
+    <svg class="btn-back-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    <span>Retour</span>
+  </a>
+{% else %}
+  <a href="{{ '/portfolio/' | relative_url }}" class="btn-back">
+    <svg class="btn-back-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    <span>Retour</span>
+  </a>
+{% endif %}
       </footer>
 
-      </article>
+    </article>
   </main>
 </div>
+
+
+<script src="{{ '/assets/js/gallery.js' | relative_url }}"></script>

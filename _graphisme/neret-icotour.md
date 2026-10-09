@@ -1,6 +1,7 @@
 ---
 layout: project
 title: "Guide NERET & Icotour"
+category: graphisme
 client: "NERET & ICOTOUR"
 description: "Automatisation de la mise en page d'annuaires et guides volumineux (1600 pages et 800 pages)."
 pages: "2400 pages (1600p + 800p)"

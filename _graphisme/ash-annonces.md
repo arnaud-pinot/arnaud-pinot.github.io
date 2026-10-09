@@ -1,6 +1,7 @@
 ---
 layout: project
 title: "ASH Annonces"
+category: graphisme
 client: "ASH"
 description: "Développement d'une solution d'automatisation de la mise en page d'annonces."
 année: "2024"

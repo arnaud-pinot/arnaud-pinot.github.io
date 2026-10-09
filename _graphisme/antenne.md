@@ -1,6 +1,7 @@
 ---
 layout: project
-title: "Graphisme et mise en page"
+title: "L'Antenne"
+category: graphisme
 client: "L'Antenne"
 description: Annuaire du fret aérien regroupant les informations réglementaires et un listing
 année: de 2019 à 2024

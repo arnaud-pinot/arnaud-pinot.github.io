@@ -1,6 +1,7 @@
 ---
 layout: project
 title: "Annonces presse SSI Schaefer"
+category: graphisme
 client: "SSI Schaefer"
 description: "Création d'annonces presse modernes et percutantes mettant en avant l'innovation logistique."
 thumb: "/assets/img/480x360-ssi-schaefer.jpg"
