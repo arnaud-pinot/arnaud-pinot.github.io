@@ -60,6 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
           document.body.appendChild(currentMainContent);
         }
 
+        // Fermer la modale si elle était ouverte avant de changer de page
+        const activeModal = document.getElementById('photo-modal');
+        if (activeModal && activeModal.open) {
+          activeModal.close();
+          activeModal.classList.remove('closing');
+        }
+
         // Retirer d'abord la classe d'animation
         currentMainContent.classList.remove("animate-enter");
 
@@ -77,6 +84,11 @@ document.addEventListener("DOMContentLoaded", () => {
           initGallery();
         }
       } else if (currentMainContent && isGoingHome) {
+        const activeModal = document.getElementById('photo-modal');
+        if (activeModal && activeModal.open) {
+          activeModal.close();
+          activeModal.classList.remove('closing');
+        }
         currentMainContent.innerHTML = "";
       }
 

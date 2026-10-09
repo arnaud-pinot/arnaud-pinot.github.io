@@ -4,65 +4,81 @@ function initGallery() {
 
   if (!modal || !modalImg) return;
 
-  // Fonction pour gérer la fermeture animée
-  function closeModalWithAnimation() {
-    if (modal.classList.contains('closing')) return;
-
-    modal.classList.add('closing');
-
-    setTimeout(() => {
-      modal.close();
-      modal.classList.remove('closing');
-    }, 250); // Durée alignée avec l'animation CSS (0.25s)
+  // Si la modale est restée ouverte lors d'un changement de page Ajax, on la réinitialise
+  if (modal.open) {
+    modal.close();
   }
+  modal.classList.remove('closing');
 
-  // Empêcher l'attachement multiple des événements sur le document
+  // Attacher les écouteurs d'événements une seule fois sur le document
   if (!document.body.dataset.galleryEventsBound) {
     document.body.dataset.galleryEventsBound = 'true';
 
+    // 1. Clic global (Ouverture, Bouton Fermer, Overlay)
     document.body.addEventListener('click', (e) => {
       const activeModal = document.getElementById('photo-modal');
-      if (!activeModal) return;
+      const activeModalImg = document.getElementById('modal-img');
+      if (!activeModal || !activeModalImg) return;
 
-      // 1. Clic sur une vignette photo pour ouvrir
+      // Clic sur une vignette photo -> OUVERTURE
       const photoItem = e.target.closest('.photo-item');
       if (photoItem) {
         e.preventDefault();
         const fullUrl = photoItem.getAttribute('data-full');
-        const activeModalImg = document.getElementById('modal-img');
-        if (fullUrl && activeModalImg) {
+        if (fullUrl) {
           activeModalImg.src = fullUrl;
           activeModal.classList.remove('closing');
-          activeModal.showModal();
+          if (!activeModal.open) {
+            activeModal.showModal();
+          }
         }
         return;
       }
 
-      // 2. Clic sur le bouton de fermeture (.modal-close)
+      // Clic sur le bouton de fermeture (.modal-close) -> FERMETURE
       const closeBtn = e.target.closest('.modal-close');
       if (closeBtn) {
         e.preventDefault();
         e.stopPropagation();
-        closeModalWithAnimation();
+        closeGalleryModal(activeModal);
         return;
       }
 
-      // 3. Clic sur l'overlay / fond noir
+      // Clic sur l'overlay / fond noir en dehors de l'image -> FERMETURE
       if (e.target === activeModal) {
-        closeModalWithAnimation();
+        closeGalleryModal(activeModal);
       }
     });
-  }
 
-  // Intercepter la touche Échap pour jouer l'animation de fermeture aussi
-  if (!modal.dataset.cancelBound) {
-    modal.dataset.cancelBound = 'true';
-    modal.addEventListener('cancel', (e) => {
-      e.preventDefault();
-      closeModalWithAnimation();
+    // 2. Touche Échap (Escape)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const activeModal = document.getElementById('photo-modal');
+        if (activeModal && activeModal.open) {
+          e.preventDefault();
+          closeGalleryModal(activeModal);
+        }
+      }
     });
   }
 }
 
-// Initialisation au chargement direct de la page
+// Fonction centrale pour fermer la modale avec animation
+function closeGalleryModal(modal) {
+  if (!modal || !modal.open || modal.classList.contains('closing')) return;
+
+  modal.classList.add('closing');
+
+  setTimeout(() => {
+    try {
+      modal.close();
+    } catch (err) {
+      // Fallback si l'état de la dialog était incohérent
+      modal.removeAttribute('open');
+    }
+    modal.classList.remove('closing');
+  }, 230); // Un poil plus court que les 250ms CSS pour éviter les décalages
+}
+
+// Initialisation au chargement direct
 document.addEventListener('DOMContentLoaded', initGallery);
