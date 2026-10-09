@@ -451,6 +451,7 @@ h1, h2, h3, h4, h5, h6,
   cursor: pointer;
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
   will-change: transform, box-shadow;
+  overflow: hidden;
 }
 
 .photo-item img {
