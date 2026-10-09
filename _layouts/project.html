@@ -95,15 +95,24 @@ layout: default
         </div>
       </header>
 
-      <!-- Image à la une (Hero Image) - Structure directe comme photos.md -->
-      {% assign hero_image = page.image1 | default: page.image %}
-      {% if hero_image %}
-        <div class="project-hero-image">
-          <a href="{{ hero_image | relative_url }}" class="photo-item" data-full="{{ hero_image | relative_url }}">
-            <img src="{{ hero_image | relative_url }}" alt="{{ page.title }}" loading="lazy">
-          </a>
-        </div>
-      {% endif %}
+{% assign hero_image = page.poster | default: page.image1 | default: page.image %}
+
+{% if page.video %}
+  <!-- Lecteur Vidéo avec poster dédié, en pause au chargement -->
+  <div class="project-hero-video" style="margin: 1.5rem 0 2rem 0;">
+    <video id="motion-player" controls preload="metadata" poster="{{ hero_image | relative_url }}" style="width: 100%; max-height: 520px; border-radius: 10px; background-color: #000; display: block;">
+      <source src="{{ page.video }}" type="video/mp4">
+      Votre navigateur ne supporte pas la lecture de vidéos.
+    </video>
+  </div>
+{% elsif hero_image %}
+  <!-- Image principale si pas de vidéo -->
+  <div class="project-hero-image">
+    <a href="{{ hero_image | relative_url }}" class="photo-item" data-full="{{ hero_image | relative_url }}">
+      <img src="{{ hero_image | relative_url }}" alt="{{ page.title }}" loading="lazy">
+    </a>
+  </div>
+{% endif %}
 
       <!-- Contenu Markdown -->
       <section class="project-body">
