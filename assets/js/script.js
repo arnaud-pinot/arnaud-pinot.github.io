@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      // 3. Remplacement du contenu et RELANCE DE L'ANIMATION CSS
+      // 3. Remplacement du contenu, relance de la galerie et des animations
       if (newMainContent) {
         if (!currentMainContent) {
           currentMainContent = document.createElement("main");
@@ -60,17 +60,22 @@ document.addEventListener("DOMContentLoaded", () => {
           document.body.appendChild(currentMainContent);
         }
 
-        // Retirer d'abord la classe d'animation si elle y était déjà
+        // Retirer d'abord la classe d'animation
         currentMainContent.classList.remove("animate-enter");
 
-        // Injection du nouveau contenu
+        // Injection du nouveau HTML
         currentMainContent.innerHTML = newMainContent.innerHTML;
 
         // Astuce : Forcer le 'reflow' pour que le navigateur enregistre le retrait de la classe
         void currentMainContent.offsetWidth;
 
-        // Ajouter la classe pour déclencher l'animation
+        // Ajouter la classe pour déclencher l'animation d'entrée
         currentMainContent.classList.add("animate-enter");
+
+        // Relancer l'initialisation des événements de la galerie photo
+        if (typeof initGallery === 'function') {
+          initGallery();
+        }
       } else if (currentMainContent && isGoingHome) {
         currentMainContent.innerHTML = "";
       }
