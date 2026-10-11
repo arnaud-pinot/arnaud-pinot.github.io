@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Photographie
+title: Photographies
 permalink: /photos/
 ---
 
