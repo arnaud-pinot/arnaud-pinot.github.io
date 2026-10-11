@@ -755,33 +755,47 @@ h1, h2, h3, h4, h5, h6,
  *  ADAPTATION MOBILE & TABLETTE (< 900px)
  *  ========================================================= */
 @media (max-width: 900px) {
-  /* Forcer l'affichage du bouton hamburger sur mobile */
+  /* Le bouton hamburger est toujours visible et bien positionné sur mobile */
   .mobile-menu-btn {
     display: flex !important;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 300;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--primary-color, #000);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
 
-  /* Sur mobile, la sidebar latérale est masquée par défaut */
+  /* Panneau latéral masqué hors écran par défaut sur mobile */
   .brand-panel.side {
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
     width: 100vw !important;
-    height: 100vh;
-    z-index: 200;
+    height: 100vh !important;
+    z-index: 250;
     transform: translateX(-100%);
     opacity: 0;
     pointer-events: none;
     transition: transform 0.4s ease, opacity 0.4s ease;
   }
 
-  /* Quand le menu est ouvert via le bouton hamburger */
+  /* Quand on clique sur le bouton, il glisse et s'affiche */
   .brand-panel.side.mobile-open {
     transform: translateX(0) !important;
     opacity: 1 !important;
     pointer-events: auto !important;
   }
 
-  /* Le contenu principal prend toute la largeur sur mobile */
+  /* Le contenu principal prend toute la largeur */
   .main-content {
     margin-left: 0 !important;
     padding: 4.5rem 1.25rem 2.5rem 1.25rem !important;

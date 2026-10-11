@@ -1,4 +1,10 @@
+<!-- Bouton hamburger fixe dans le layout -->
+  <button type="button" class="mobile-menu-btn" aria-label="Menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
 <aside class="brand-panel {% if page.layout == 'home' or page.url == '/' or page.url == '/index.html' %}full{% else %}side{% endif %}">
+
 <a href="{{ '/' | relative_url }}" class="logo">
   <img src="/assets/img/Portrait1.png" decoding="sync" loading="eager">
 </a>

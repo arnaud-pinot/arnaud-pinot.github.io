@@ -1,0 +1,78 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const brandPanel = document.querySelector(".brand-panel");
+  const mainContent = document.querySelector(".main-content");
+  const submenuToggle = document.querySelector(".submenu-toggle");
+  const hasSubmenu = document.querySelector(".has-submenu");
+  const mobileBtn = document.querySelector(".mobile-menu-btn");
+
+  // 1. Détection de la page courante pour laisser le sous-menu ouvert si on est dans Portfolio
+  const currentPath = window.location.pathname;
+  if (hasSubmenu && (currentPath.includes("graphisme") || currentPath.includes("motion") || currentPath.includes("photos") || currentPath.includes("portfolio"))) {
+    hasSubmenu.classList.add("open");
+  }
+
+  // 2. Accordéon Portfolio (Clic manuel)
+  if (submenuToggle && hasSubmenu) {
+    submenuToggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      hasSubmenu.classList.toggle("open");
+    });
+  }
+
+  // 3. Navigation avec transition du panneau
+  const links = document.querySelectorAll(".nav-menu a, .submenu a, .logo");
+
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const targetUrl = link.getAttribute("href");
+
+      // Si c'est une ancre interne ou un lien externe, comportement par défaut
+      if (!targetUrl || targetUrl.startsWith("#") || targetUrl.startsWith("http")) return;
+
+      const cleanTarget = targetUrl.replace(window.location.origin, "").replace(/\/$/, "");
+      const isGoingHome = cleanTarget === "" || cleanTarget === "/index.html" || cleanTarget === "." || targetUrl === "/";
+
+      e.preventDefault();
+
+      // Redimensionnement du panneau latéral
+      if (brandPanel) {
+        if (isGoingHome) {
+          brandPanel.classList.remove("side");
+          brandPanel.classList.add("full");
+        } else {
+          brandPanel.classList.remove("full");
+          brandPanel.classList.add("side");
+        }
+      }
+
+      // Fondu de sortie du contenu principal
+      if (mainContent) {
+        mainContent.classList.add("fade-out");
+      }
+
+      // Fermer le menu mobile si ouvert
+      if (brandPanel) {
+        brandPanel.classList.remove("mobile-open");
+      }
+      if (mobileBtn) {
+        mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      }
+
+      // Redirection après l'animation CSS (400ms)
+      setTimeout(() => {
+        window.location.href = targetUrl;
+      }, 400);
+    });
+  });
+
+  // 4. Menu Hamburger Mobile (Ouverture/Fermeture du tiroir)
+  if (mobileBtn && brandPanel) {
+    mobileBtn.addEventListener("click", () => {
+      const isOpen = brandPanel.classList.toggle("mobile-open");
+      mobileBtn.innerHTML = isOpen 
+        ? '<i class="fa-solid fa-xmark"></i>' 
+        : '<i class="fa-solid fa-bars"></i>';
+    });
+  }
+});
