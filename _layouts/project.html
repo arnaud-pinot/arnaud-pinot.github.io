@@ -100,7 +100,7 @@ layout: default
 {% if page.video %}
   <!-- Lecteur Vidéo avec poster dédié, en pause au chargement -->
   <div class="project-hero-video" style="margin: 1.5rem 0 2rem 0;">
-    <video id="motion-player" controls preload="metadata" poster="{{ hero_image | relative_url }}" style="width: 100%; max-height: 520px; border-radius: 10px; background-color: #000; display: block;">
+    <video id="motion-player" controls preload="metadata" poster="{{ hero_image | relative_url }}" style="width: 100%; max-height: 650px; border-radius: 10px; background-color: #000; display: block;">
       <source src="{{ page.video }}" type="video/mp4">
       Votre navigateur ne supporte pas la lecture de vidéos.
     </video>

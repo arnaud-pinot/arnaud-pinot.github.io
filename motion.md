@@ -7,6 +7,7 @@ permalink: /motion/
 
 <div class="showcase-grid">
   {% for project in site.motion %}
+  <div class="card-wrapper">
     <article class="card">
       <a href="{{ project.url | relative_url }}">
         <img class="card-preview" src="{{ project.thumb | relative_url }}" alt="{{ project.title }}">
@@ -16,5 +17,6 @@ permalink: /motion/
         </div>
       </a>
     </article>
+    </div>
   {% endfor %}
 </div>

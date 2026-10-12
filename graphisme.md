@@ -7,6 +7,7 @@ permalink: /graphisme/
 
 <div class="showcase-grid">
   {% for project in site.graphisme %}
+  <div class="card-wrapper">
     <article class="card">
       <a href="{{ project.url | relative_url }}">
         <img class="card-preview" src="{{ project.thumb }}">
@@ -16,5 +17,6 @@ permalink: /graphisme/
         </div>
       </a>
     </article>
+    </div>
   {% endfor %}
 </div>
