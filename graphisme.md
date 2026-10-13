@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Portfolio Graphisme
+title: Graphisme
 description: "Découvrez mes créations graphiques et travaux d'édition."
 permalink: /graphisme/
 ---

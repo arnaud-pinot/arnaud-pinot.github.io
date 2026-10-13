@@ -827,3 +827,189 @@ a:hover {
     padding: 4.5rem 1.25rem 2.5rem 1.25rem !important;
   }
 }
+/* Layout Global CV */
+.cv-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* La sidebar devient "sticky" : elle reste fixe et élégante quand on fait défiler le CV */
+.cv-sidebar {
+  position: sticky;
+  top: 2rem;                         /* Distance du haut de l'écran lors du scroll */
+}
+
+/* Adaptation mobile et tablettes (< 900px) */
+@media (max-width: 1400px) {
+  .cv-layout {
+    grid-template-columns: 1fr;      /* Repasse sur 1 seule colonne sur petit écran */
+    gap: 1.5rem;
+  }
+  .cv-sidebar {
+    position: static;                /* Désactive le sticky sur mobile */
+  }
+}
+
+/* Colonne de droite du CV : empilement des blocs avec un bel espace */
+.cv-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* <--- C'est ici que tu règles l'espace entre le bloc Expériences et Formations (2rem ou 2.5rem) */
+}
+
+/* Si tu n'utilises pas flex sur .cv-main, ajoute simplement une marge en bas des cartes : */
+.skill-card {
+  margin-bottom: 0rem; /* Évite que les cartes se collent verticalement */
+}
+
+
+/* Badges & Pills */
+
+.contact-list{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  background-color: #eef4f7;
+  color: #1f5061;
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  border: 1px solid #d0e1e7;
+}
+.badge:hover {
+  background-color: #fff;
+  color: #1f5061;
+  font-weight: 600;
+}
+
+.badge.outline {
+  background-color: transparent;
+  color: #555;
+  border-color: #ddd;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 1.2rem;
+  border-left: 2px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.65rem;
+  top: 0.25rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1f5061;
+  border: 2px solid #fff;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timeline-header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #222;
+}
+
+.period {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.company {
+  font-size: 0.9rem;
+  color: #1f5061;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.task-list {
+  margin: 0.3rem 0 0 1rem;
+  padding: 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.skills-grid {
+  /* Au lieu de display: grid */
+  column-count: 2;
+  column-gap: 1.5rem;
+}
+
+/* Important : éviter qu'une carte soit coupée en deux */
+.skills-grid .skill-card {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Application de la transition fluide sur les cartes de compétences */
+.skill-card {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
+}
+
+/* Effet au survol : la carte monte de -6px et l'ombre s'intensifie */
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* Sur tablette et mobile (< 900px) : passer sur 1 seule colonne */
+@media (max-width: 1280px) {
+  .skills-grid {
+    column-count: 1;
+  }
+}
+
+
+.tech-group {
+  margin-top: 2rem;
+}
+
+.tech-group h4 {
+  margin: 0 0 0.3rem 0;
+  font-size: 0.9rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.description-text {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}

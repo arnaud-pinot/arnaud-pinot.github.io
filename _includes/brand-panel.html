@@ -14,8 +14,8 @@
   <nav>
     <ul class="nav-menu">
       <li><a href="{{ '/' | relative_url }}">Accueil</a></li>
-      <li><a href="{{ '/competence/' | relative_url }}">Compétence</a></li>
-      <li><a href="{{ '/cv.html' | relative_url }}">CV</a></li>
+      <li><a href="{{ '/competences/' | relative_url }}">Compétences</a></li>
+      <li><a href="{{ '/parcours-professionnel/' | relative_url }}">Parcours Professionnel</a></li>
 
       <!-- Si l'URL contient graphisme, photo ou motion, on garde open -->
 <li class="has-submenu {% if page.url contains 'graphisme' or page.url contains 'motion' or page.url contains 'photo' or page.url contains 'portfolio' %}open{% endif %}">        <button type="button" class="submenu-toggle">
@@ -23,7 +23,7 @@
         </button>
         <ul class="submenu">
           <li><a href="{{ '/graphisme/' | relative_url }}">Graphisme</a></li>
-          <li><a href="{{ '/motion/' | relative_url }}">Motion design</a></li>
+          <li><a href="{{ '/motion-design/' | relative_url }}">Motion Design</a></li>
           <li><a href="{{ '/photos/' | relative_url }}">Photographies</a></li>
         </ul>
       </li>

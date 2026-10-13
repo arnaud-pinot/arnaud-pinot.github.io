@@ -2,11 +2,11 @@
 layout: page
 title: Motion Design
 description: "Découvrez mes créations animées et projets vidéo."
-permalink: /motion/
+permalink: /motion-design/
 ---
 
 <div class="showcase-grid">
-  {% for project in site.motion %}
+  {% for project in site.motion-design %}
   <div class="card-wrapper">
     <article class="card">
       <a href="{{ project.url | relative_url }}">

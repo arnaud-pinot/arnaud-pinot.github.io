@@ -1,5 +1,5 @@
 title: "Arnaud PINOT"
-description: "Site portfolio personnel"
+description: "portfolio"
 baseurl: "" # Laisser vide si c'est la racine de votre domaine GitHub Pages
 url: ""     # Votre URL GitHub Pages (ex: https://votre-pseudo.github.io)
 
@@ -8,9 +8,9 @@ collections:
   graphisme:
     output: true
     permalink: /graphisme/:name/
-  motion:
+  motion-design:
     output: true
-    permalink: /motion/:name/
+    permalink: /motion-design/:name/
   photos:
     output: true
     permalink: /photos/:name/
