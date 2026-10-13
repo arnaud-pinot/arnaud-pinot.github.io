@@ -1264,7 +1264,7 @@ a:hover {
 .skill-details[open] {
   background: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  border-color: var(--primary-color, #0b4353);
+/*  border-color: var(--primary-color, #0b4353);*/
 }
 
 .skill-details summary.skill-summary {
@@ -1327,6 +1327,95 @@ a:hover {
   from {
     opacity: 0;
     transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* =========================================================
+ *  ACCORDÉONS PRINCIPAUX DES BLOCS DE COMPÉTENCES
+ *  ========================================================= */
+
+details.skill-card {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+details.skill-card[open] {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+details.skill-card summary.skill-header {
+  list-style: none; /* Supprime le triangle par défaut */
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-right: 2rem;
+  outline: none;
+}
+
+/* Supprime le marqueur sur les navigateurs Webkit (Chrome/Safari) */
+details.skill-card summary.skill-header::-webkit-details-marker {
+  display: none;
+}
+
+/* Agencement interne du titre et de l'icône */
+.skill-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+details.skill-card summary.skill-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  transition: color 0.2s ease;
+}
+
+details.skill-card summary.skill-header:hover h2 {
+  color: var(--primary-color, #0b4353);
+}
+
+/* Ajout et style du chevron animé avec FontAwesome sur le header principal */
+details.skill-card summary.skill-header::after {
+  content: "\f078"; /* Icône fa-chevron-down */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.9rem;
+  color: #888;
+  transition: transform 0.3s ease, color 0.2s ease;
+  position: absolute;
+  right: 0;
+}
+
+details.skill-card summary.skill-header:hover::after {
+  color: var(--primary-color, #0b4353);
+}
+
+/* Rotation du chevron à l'ouverture de la carte */
+details.skill-card[open] summary.skill-header::after {
+  transform: rotate(180deg);
+  color: var(--primary-color, #0b4353);
+}
+
+/* Espacement progressif des éléments internes à l'ouverture */
+details.skill-card .tech-group {
+  margin-top: 1.2rem;
+  animation: fadeInSkillMain 0.35s ease;
+}
+
+@keyframes fadeInSkillMain {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
   }
   to {
     opacity: 1;
