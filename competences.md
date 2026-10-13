@@ -71,8 +71,12 @@ permalink: /competences/
       </div>
     </div>
     <div class="tech-group">
-      <h4>Savoir-faire</h4>
-      <p class="description-text">Chaîne graphique complète, préparation prépresse (débords, profils colorimétriques), typographie et mise en page responsive.</p>
+      <details class="skill-details">
+        <summary class="skill-summary">
+          <h4>Savoir-faire</h4>
+        </summary>
+        <p class="description-text">Chaîne graphique complète, préparation prépresse (débords, profils colorimétriques), typographie et mise en page responsive.</p>
+      </details>
     </div>
   </section>
 
@@ -91,8 +95,12 @@ permalink: /competences/
       </div>
     </div>
     <div class="tech-group">
-      <h4>Savoir-faire</h4>
-      <p class="description-text">Animations 2D/3D, titrage dynamique, montage et storytelling visuel pour la communication digitale.</p>
+      <details class="skill-details">
+        <summary class="skill-summary">
+          <h4>Savoir-faire</h4>
+        </summary>
+        <p class="description-text">Animations 2D/3D, titrage dynamique, montage et storytelling visuel pour la communication digitale.</p>
+      </details>
     </div>
   </section>
 
@@ -110,8 +118,12 @@ permalink: /competences/
       </div>
     </div>
     <div class="tech-group">
-      <h4>Savoir-faire</h4>
-      <p class="description-text">Compréhension des réglages de l'appareil photo (ouverture, vitesse d'obturation, ISO) et des principes de composition pour capturer des images de qualité. Compétence dans l'utilisation de logiciels pour retoucher et améliorer les photos après la prise de vue.</p>
+      <details class="skill-details">
+        <summary class="skill-summary">
+          <h4>Savoir-faire</h4>
+        </summary>
+        <p class="description-text">Compréhension des réglages de l'appareil photo (ouverture, vitesse d'obturation, ISO) et des principes de composition pour capturer des images de qualité. Compétence dans l'utilisation de logiciels pour retoucher et améliorer les photos après la prise de vue.</p>
+      </details>
     </div>
   </section>
 
@@ -129,7 +141,6 @@ permalink: /competences/
         <span class="badge">Jekyll</span>
         <span class="badge">XML</span>
         <span class="badge">Scripting Shell / Data Merge</span>
-
       </div>
     </div>
   </section>
