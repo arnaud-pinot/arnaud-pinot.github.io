@@ -160,7 +160,7 @@ permalink: /competences/
     <summary class="skill-header">
       <div class="skill-title-wrapper">
         <i class="fa-solid fa-brain skill-icon"></i>
-        <h2>IA, Génération & Vibe Coding</h2>
+        <h2>IA Générative & Vibe Coding</h2>
       </div>
     </summary>
     
@@ -168,7 +168,7 @@ permalink: /competences/
       <h4>IA Générative & Visuelle</h4>
       <div class="badge-container">
         <span class="badge">Stable Diffusion</span>
-        <span class="badge">Prompt Engineering</span>
+        <span class="badge">Prompt</span>
         <span class="badge">Workflows Visuels IA</span>
       </div>
     </div>
@@ -177,7 +177,7 @@ permalink: /competences/
       <h4>Modèles & Exécution Locale</h4>
       <div class="badge-container">
         <span class="badge">LM Studio</span>
-        <span class="badge">LLM en local (Edge AI)</span>
+        <span class="badge">LLM en local</span>
       </div>
     </div>
 
