@@ -2,7 +2,7 @@
 layout: page
 title: "Compétences techniques"
 description: "Savoir-faire en Systèmes, Réseaux, Infographie, Web, Motion Design et Photographie."
-permalink: /Services/
+permalink: /services/
 ---
 
 <div class="skills-grid">
