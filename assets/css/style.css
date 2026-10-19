@@ -41,7 +41,6 @@ a:hover {
   opacity: 0.7; /* Effet de transparence au survol */
 }
 
-
 /* =========================================================
    BLOC BLEU (PANNEAU DU HEADER / SIDEBAR)
    ========================================================= */
@@ -145,7 +144,13 @@ a:hover {
 
 .social-links a:hover {
   transform: translateY(-2px);
+  opacity: 0.8!important;
+
 }
+.social-links a:hover::after {
+  opacity: 1!important;
+}
+
 
 /* =========================================================
    SOUS-MENU ACCORDÉON PORTFOLIO
@@ -186,7 +191,6 @@ a:hover {
   padding: 0;
   margin: 0;
   max-height: 0;
-  overflow: hidden;
   opacity: 0;
   transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
   display: flex;
@@ -196,6 +200,7 @@ a:hover {
 }
 
 .submenu a {
+  font-weight: 600;
   font-size: 0.95rem;
   opacity: 0.8;
   text-decoration: none;
@@ -704,6 +709,9 @@ a:hover {
 }
 
 /* Grille de métadonnées du projet */
+.meta-card-full{
+  padding: 1.25rem 1.5rem;
+}
 .project-meta-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -737,6 +745,7 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
+  align-items: flex-start;
 }
 
 .tag {
@@ -746,6 +755,7 @@ a:hover {
   border-radius: 4px;
   font-size: 0.8rem;
   font-weight: 500;
+  display: inline-block; /* Garantit que chaque tag se comporte comme un bloc indépendant */
 }
 
 /* Galerie & Visuels du projet */
@@ -1783,3 +1793,75 @@ margin-bottom: 0.08mm;
   }
 }
 
+/* =========================================================
+ *   TOOLTIP / POPUP SOURIS PERSONNALISÉ (À droite)
+ *   ========================================================= */
+
+/* Référence de positionnement */
+.custom-tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Le conteneur du popup (positionné à droite) */
+.custom-tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 12px); /* Se place à droite du lien avec un petit espace */
+  transform: translateY(-50%) translateX(-6px); /* Animation de translation horizontale */
+
+  /* Largeur fixe et texte centré pour un rendu propre */
+  width: 220px;
+  text-align: left; /* Ou center selon vos préférences */
+
+  /* Noir pur opaque */
+  background-color: #000000;
+  color: #ffffff;
+
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.4;
+
+  /* Autorise vos retours à la ligne faits avec Entrée */
+  white-space: pre-line;
+
+  /* Ombre portée */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 9999;
+}
+
+/* La petite flèche sur le côté gauche du popup (pointe vers le lien) */
+.custom-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 6px);
+  transform: translateY(-50%) translateX(-6px);
+
+  border-width: 6px;
+  border-style: solid;
+  /* La flèche pointe vers la gauche : seul le bord droit est coloré */
+  border-color: transparent #000000 transparent transparent;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 9999;
+}
+
+/* Effet au survol : apparition et glissement fluide vers la droite */
+.custom-tooltip:hover::before,
+.custom-tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}

@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "L'Antenne"
-category: graphisme
+category: graphismes
 client: "L'Antenne"
 description: Annuaire du fret aérien regroupant les informations réglementaires et un listing
 année: de 2019 à 2024
@@ -9,7 +9,7 @@ pages: 320 pages
 thumb: "/assets/img/480x360-antenne.jpg"
 image1: "/assets/img/antenne_02.png"
 image2: "/assets/img/antenne_01.png"
-tools: ["InDesign", "Illustrator", "Photoshop"]
+tools: ["InDesign", "Illustrator", "Photoshop", "Scripting / Data Merge", "CSV", "XLS", "XML"]
 ---
 
 

@@ -1,13 +1,13 @@
 title: "Arnaud PINOT"
-description: "portfolio"
+description: "Technicien Informatique & Systèmes"
 baseurl: "" # Laisser vide si c'est la racine de votre domaine GitHub Pages
 url: ""     # Votre URL GitHub Pages (ex: https://votre-pseudo.github.io)
 
 # Configuration des 3 collections
 collections:
-  graphisme:
+  graphismes:
     output: true
-    permalink: /graphisme/:name/
+    permalink: /graphismes/:name/
   motion-design:
     output: true
     permalink: /motion-design/:name/

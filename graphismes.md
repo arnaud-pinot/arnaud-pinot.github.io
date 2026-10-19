@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Graphisme
+title: Graphismes
 description: "Découvrez mes créations graphiques et travaux d'édition."
-permalink: /graphisme/
+permalink: /graphismes/
 ---
 
 <div class="showcase-grid">
-  {% for project in site.graphisme %}
+  {% for project in site.graphismes %}
   <div class="card-wrapper">
     <article class="card">
       <a href="{{ project.url | relative_url }}">

@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "Parcours Professionnel"
+title: "Mon parcours"
 description: "Parcours professionnel, formations et compétences d'Arnaud PINOT, Technicien Informatique."
-permalink: /parcours-professionnel/
+permalink: /mon-parcours/
 ---
 
 <div class="cv-layout">
@@ -10,13 +10,13 @@ permalink: /parcours-professionnel/
   <!-- Colonne de gauche : Profil & Résumé des compétences -->
   <aside class="cv-sidebar">
     <div class="skill-card profile-card">
-      <div class="skill-header">
+<!--      <div class="skill-header">
         <i class="fa-solid fa-user-gear skill-icon"></i>
         <h2>Arnaud PINOT</h2>
       </div>
-      <p class="subtitle">Technicien Informatique & Systèmes</p>
+      <p class="subtitle">Technicien Informatique & Systèmes</p>-->
       
-      <h3 style="margin-top: 30px;">Soft Skills</h3>
+      <h3>Soft Skills</h3>
       <div class="badge-container">
         <span class="badge">Autodidacte</span>
         <span class="badge">Autonome</span>
@@ -42,7 +42,7 @@ permalink: /parcours-professionnel/
     <section class="skill-card">
       <div class="skill-header">
         <i class="fa-solid fa-briefcase skill-icon"></i>
-        <h2>Expériences Professionnelles</h2>
+        <h2>Ils m'ont fait confiance...</h2>
       </div>
 
       <div class="experience-list">
@@ -64,7 +64,7 @@ permalink: /parcours-professionnel/
         <details class="experience-card">
           <summary class="experience-header">
             <div>
-              <h3>Technicien Support Informatique</h3>
+              <h3>Technicien Informatique</h3>
               <span class="company">Pixel Image - Groupe TEMA (Metz)</span>
             </div>
             <span class="period">2023 – 2024</span>
@@ -78,7 +78,7 @@ permalink: /parcours-professionnel/
         <details class="experience-card">
           <summary class="experience-header">
             <div>
-              <h3>Rédacteur Graphiste</h3>
+              <h3>Graphiste Print/Web</h3>
               <span class="company">Pixel Image - Groupe TEMA (Metz)</span>
             </div>
             <span class="period">2011 – 2024</span>
@@ -109,7 +109,7 @@ permalink: /parcours-professionnel/
     <section class="skill-card">
       <div class="skill-header">
         <i class="fa-solid fa-graduation-cap skill-icon"></i>
-        <h2>Formations & Diplômes</h2>
+        <h2>Formations & diplômes</h2>
       </div>
 
       <div class="experience-list">

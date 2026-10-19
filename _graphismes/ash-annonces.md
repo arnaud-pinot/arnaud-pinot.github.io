@@ -1,12 +1,13 @@
 ---
 layout: project
-title: "Guide NERET & Icotour"
-category: graphisme
-client: "NERET & ICOTOUR"
-description: "Automatisation de la mise en page d'annuaires et guides volumineux (1600 pages et 800 pages)."
-pages: "2400 pages (1600p + 800p)"
-thumb: "/assets/img/480x360-neret-icotour.jpg"
-image1: "/assets/img/neret-icotour.jpg"
+title: "ASH Annonces"
+category: graphismes
+client: "ASH"
+description: "Développement d'une solution d'automatisation de la mise en page d'annonces."
+année: "2024"
+thumb: "/assets/img/480x360-ash-annonces.jpg"
+image1: "/assets/img/ash_annonces.png"
+image2: "/assets/img/ash-annonces-web.png"
 tools: ["InDesign", "Scripting / Data Merge", "CSV", "XLS", "XML"]
 ---
 

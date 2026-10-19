@@ -13,16 +13,16 @@
 
   <nav>
     <ul class="nav-menu">
-      <li><a href="{{ '/' | relative_url }}">Accueil</a></li>
-      <li><a href="{{ '/competences/' | relative_url }}">Compétences</a></li>
-      <li><a href="{{ '/parcours-professionnel/' | relative_url }}">Parcours Professionnel</a></li>
+<!--      <li><a href="{{ '/' | relative_url }}">Accueil</a></li>-->
+      <li><a href="{{ '/services/' | relative_url }}" class="custom-tooltip" data-tooltip="Découvrez mes compétences et mon savoir-faire">Services</a></li>
+      <li><a href="{{ '/mon-parcours/' | relative_url }}" class="custom-tooltip" data-tooltip="Découvrez Mon parcours professionnel">Mon parcours</a></li>
 
       <!-- Si l'URL contient graphisme, photo ou motion, on garde open -->
 <li class="has-submenu {% if page.url contains 'graphisme' or page.url contains 'motion' or page.url contains 'photo' or page.url contains 'portfolio' %}open{% endif %}">        <button type="button" class="submenu-toggle">
           Portfolio <i class="fa-solid fa-chevron-down arrow-icon"></i>
         </button>
         <ul class="submenu">
-          <li><a href="{{ '/graphisme/' | relative_url }}">Graphisme</a></li>
+          <li><a href="{{ '/graphismes/' | relative_url }}" class="custom-tooltip" data-tooltip="Découvrez mes créations graphiques et travaux d'édition.">Graphismes</a></li>
           <li><a href="{{ '/motion-design/' | relative_url }}">Motion Design</a></li>
           <li><a href="{{ '/photos/' | relative_url }}">Photographies</a></li>
         </ul>
@@ -35,8 +35,7 @@
     <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
     <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
     <a href="#" aria-label="Mastodon"><i class="fa-brands fa-mastodon"></i></a>
-<!--<a href="{{ '/cv.html' | relative_url }}" onclick="window.open(this.href, '_blank'); return false;" aria-label="Mon CV"><i class="fa-solid fa-file-lines"></i></a>-->
-<a href="{{ '/cv.html' | relative_url }}" class="external-link" aria-label="Mon CV">  <i class="fa-solid fa-file-lines"></i></a>
+<a href="{{ '/cv.html' | relative_url }}"  class="external-link custom-tooltip" data-tooltip="Téléchargez mon CV au format PDF" aria-label="Mon CV">  <i class="fa-solid fa-file-lines"></i></a>
 <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
   </div>
 
