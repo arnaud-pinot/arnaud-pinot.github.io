@@ -1,4 +1,5 @@
 ---
+layout: "vide"
 title: "CV - Arnaud PINOT"
 permalink: /cv.html
 ---
