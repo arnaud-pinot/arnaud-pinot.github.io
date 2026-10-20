@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+---
+title: "CV - Arnaud PINOT"
+permalink: /cv.html
+---
+
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -88,8 +92,8 @@
     /* Format A4 strict */
     page[size="A4"] {
       width: 210mm;
-      height: 292mm;
-      max-height: 292mm;
+      height: 296.7mm;
+      max-height: 296.7mm;
       background: #ffffff;
       display: block;
       box-shadow: 0 4px 20px rgba(0,0,0,0.25);
@@ -100,8 +104,8 @@
 
     .cv-layout {
       width: 210mm;
-      height: 292mm;
-      max-height: 292mm;
+      height: 296.7mm;
+      max-height: 296.7mm;
       display: grid;
       grid-template-columns: 68mm 142mm;
       background: #ffffff;
@@ -113,11 +117,12 @@
     .cv-sidebar {
       background: var(--primary-color);
       color: #ffffff;
-      padding: 10mm 10mm;
+      padding: 8mm;
+      padding-top: 11mm;
       display: flex;
       flex-direction: column;
-      gap: 10mm;
-      height: 292mm;
+      gap: 13mm;
+      height: 296.7mm;
       box-sizing: border-box;
     }
 
@@ -163,7 +168,7 @@
 
     .contact-list, .diploma-list {
       list-style: none;
-      font-size: 9pt;
+      font-size: 8pt;
       line-height: 1.5;
     }
 
@@ -213,11 +218,11 @@
 
     /* ================= COLONNE DE DROITE : CARTES DU PORTFOLIO ================= */
     .cv-main {
-      padding: 10mm 10mm;
+      padding: 10mm 5mm 10mm 10mm;
       display: flex;
       flex-direction: column;
-      gap: 5mm;
-      height: 292mm;
+      gap: 6mm;
+      height: 296.7mm;
       box-sizing: border-box;
       overflow: hidden;
     }
@@ -231,12 +236,12 @@
     }
 
     .main-title-card h1 {
-      font-size: 3.15rem;
+      font-size: 3rem;
       color: var(--primary-color);
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      line-height: 1.15;
+      line-height: 1;
       margin: 0;
     }
 
@@ -244,14 +249,13 @@
       background: #ffffff;
       border-radius: 6px;
       padding: 2.2mm 3.5mm;
-      border-left: 2px solid var(--secondary-color);
+      border-left: 1px solid var(--secondary-color);
     }
 
     .skill-header {
       display: flex;
       align-items: center;
       gap: 1.8mm;
-      margin-bottom: 1mm;
       padding-bottom: 2mm;
     }
 
@@ -261,7 +265,7 @@
     }
 
     .skill-header h2 {
-      font-size: 14pt;
+      font-size: 12pt;
       color: var(--secondary-color);
       text-transform: uppercase;
       letter-spacing: 0.4px;
@@ -271,7 +275,7 @@
     /* Grille de compétences */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(1, 1fr);
       gap: 3mm;
     }
 
@@ -302,29 +306,13 @@
     .timeline {
       display: flex;
       flex-direction: column;
-      gap: 2.5mm;
-      margin-top: 0.2mm;
+      gap: 3mm;
     }
 
     .timeline-item {
       position: relative;
       background: #fff;
-  padding: 3mm;
-  border-radius: 4px;
-  border: 1px solid #d4e2e7;
     }
-
-    /*.timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -3mm;
-      top: 0.1rem;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--primary-color);
-      border: 1.5px solid #fff;
-    }*/
 
     .timeline-header {
       display: flex;
@@ -354,20 +342,27 @@
     }
 
     .skill-list {
+    list-style: none;
       margin: 0.1rem 0 0 1.8mm;
       padding: 0;
       font-size: 8pt;
       color: #444;
-      list-style-type: disc;
-      line-height: 1.15;
+      line-height: 1.25;
     }
 
     .skill-list li {
-    margin-top: 5px;
     margin-right: 5px;
-    margin-bottom: 5px;
-    margin-left: 10px;
+    margin-left: 5px;
     }
+    
+        .skill-list li::before {
+content: '›';
+  position: absolute;
+  left: 0;
+  color: #444;
+  font-weight: bold;
+    }
+    
 
     @media print {
       body {
@@ -388,6 +383,59 @@
         transform: none !important;
       }
     }
+    
+    
+    
+    /* Container de la section compétences avec timeline verticale */
+.skills-timeline {
+  position: relative;
+  margin-top: 2mm;
+  display: flex;
+  flex-direction: column;
+  gap: 3mm;
+}
+
+
+
+.skill-category-block {
+  position: relative;
+}
+
+.skill-category-title {
+  font-size: 10pt;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 1mm;
+  font-family: var(--font-family-heading);
+}
+
+/* Liste des éléments avec flèches › */
+.skill-category-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: 8pt;
+  line-height: 1.35;
+  color: #333;
+}
+
+.skill-category-list li {
+  position: relative;
+  padding-left: 10px;
+}
+
+.skill-category-list li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: #444;
+  font-weight: bold;
+}
+
+.skill-category-list strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
   </style>
 </head>
 <body>
@@ -399,176 +447,140 @@
     </button>
   </div>
 
-  <!-- Conteneur de prévisualisation responsive -->
-  <div class="cv-preview-container" id="preview-container">
-    <!-- Élément cible A4 -->
-    <page size="A4" id="cv-content">
-      <div class="cv-layout">
+ <!-- Conteneur de prévisualisation responsive -->
+<div class="cv-preview-container" id="preview-container">
+  <!-- Élément cible A4 -->
+  <page size="A4" id="cv-content">
+    <div class="cv-layout">
+
+      <!-- COLONNE DE GAUCHE -->
+      <aside class="cv-sidebar">
+
+        <!-- Profil -->
+        <div class="profile-card">
+          <img src="{{ '/assets/img/Portrait1.png' | relative_url }}" alt="Arnaud PINOT" class="profile-avatar">
+          <h1 class="profile-name">Arnaud PINOT</h1>
+        </div>
+
+        <!-- Coordonnées -->
+        <div class="sidebar-block">
+          <h3></h3>
+          <ul class="contact-list">
+            <li><i class="fa-solid fa-location-dot"></i> 17, rue de Fey 57685 Augny</li>
+            <li><i class="fa-solid fa-car"></i> Permis B & Véhicule</li>
+            <li><i class="fa-solid fa-envelope"></i> arnaud.pinot@gmail.com</li>
+            <li><i class="fa-solid fa-phone"></i> 07 82 78 29 76</li>
+          </ul>
+        </div>
         
-        <!-- COLONNE DE GAUCHE : Coordonnées, Formations, Soft Skills, Centres d'intérêt -->
-        <aside class="cv-sidebar">
-          
-          <!-- Profil -->
-          <div class="profile-card">
-            <img src="./assets/img/Portrait1.png" alt="Arnaud PINOT" class="profile-avatar">
-            <h1 class="profile-name">Arnaud PINOT</h1>
-          </div>
+        <!-- Coordonnées -->
+        <div class="sidebar-block">
+          <h3>Portfolio</h3>
+          <ul class="contact-list">
+             <li><i class="fa-solid fa-globe"></i> <a href="https://arnaud-pinot.github.io" target="_blank">https://arnaud-pinot.github.io</a></li>
+          </ul>
+        </div>
 
-          <!-- Coordonnées -->
-          <div class="sidebar-block">
-            <h3></h3>
-            <ul class="contact-list">
-              <li><i class="fa-solid fa-location-dot"></i> 17, rue de Fey 57685 Augny</li>
-              <li><i class="fa-solid fa-car"></i> Permis B & Véhicule</li>
-              <li><i class="fa-solid fa-envelope"></i> arnaud.pinot@gmail.com</li>
-              <li><i class="fa-solid fa-phone"></i> 07 82 78 29 76</li>
-              <li><i class="fa-solid fa-globe"></i> <a href="https://arnaud-pinot.github.io" target="_blank">arnaud-pinot.github.io</a></li>
-            </ul>
-          </div>
-
-          <!-- Formations -->
-          <div class="sidebar-block">
-            <h3>Formations <BR>& Diplômes</h3>
-            <div class="diploma-list">
+        <!-- Formations (Issu de _data/parcours.yml) -->
+        <div class="sidebar-block">
+          <h3>Formations & Diplômes</h3>
+          <div class="diploma-list">
+            {% for formation in site.data.parcours.formations %}
               <div class="diploma-item">
-                <div class="diploma-title">Technicien Informatique</div>
-                <div class="diploma-school">OpenClassrooms (2026)</div>
+                <div class="diploma-title">{{ formation.period }} | {{ formation.title }}</div>
+                <div class="diploma-school">{{ formation.company }} </div>
               </div>
-              <div class="diploma-item">
-                <div class="diploma-title">BAC Arts Graphiques</div>
-                <div class="diploma-school">CFA Ernest Meyer (1996-2000)</div>
-              </div>
-              <div class="diploma-item">
-                <div class="diploma-title">Diplôme d'Infographie</div>
-                <div class="diploma-school">École d'infographie (1996)</div>
-              </div>
-            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Soft Skills (Issu de _data/parcours.yml) -->
+        <div class="sidebar-block">
+          <h3>Soft Skills</h3>
+          <div class="badge-container">
+            {% for skill in site.data.parcours.soft_skills %}
+              <span class="badge">{{ skill }}</span>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Centres d'intérêt (Issu de _data/parcours.yml) -->
+        <div class="sidebar-block">
+          <h3>Centres d'intérêt</h3>
+          <div class="badge-container">
+            {% for interest in site.data.parcours.interests %}
+              <span class="badge">{{ interest.name }}</span>
+            {% endfor %}
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- COLONNE DE DROITE -->
+      <main class="cv-main">
+
+        <!-- Titre du poste -->
+        <div class="main-title-card">
+          <h1>Technicien<br>Informatique</h1>
+        </div>
+
+        <!-- Compétences Techniques -->
+        <section class="skill-card">
+          <div class="skill-header">
+            <i class="fa-solid fa-server skill-icon"></i>
+            <h2>Compétences Techniques</h2>
           </div>
 
-          <!-- Soft Skills -->
-          <div class="sidebar-block">
-            <h3>Soft Skills</h3>
-            <div class="badge-container">
-              <span class="badge">Autodidacte</span>
-              <span class="badge">Autonome</span>
-              <span class="badge">Curieux</span>
-              <span class="badge">Adaptabilité</span>
-              <span class="badge">Esprit d'équipe</span>
-            </div>
+          <div class="skills-timeline">
+            {% for card in site.data.savoir_faire.competence_cards %}
+              <div class="skill-category-block">
+                <div class="skill-category-title">{{ card.title }}</div>
+                <ul class="skill-category-list">
+                  {% for group in card.groups %}
+                    {% if group.badges %}
+                      <li>
+                        <strong>{{ group.name }} :</strong>
+                        {{ group.badges | join: ", " }}
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endfor %}
           </div>
+        </section>
 
-          <!-- Centres d'intérêt -->
-          <div class="sidebar-block">
-            <h3>Centres d'intérêt</h3>
-            <div class="badge-container">
-              <span class="badge">Homelab (Proxmox, Synology)</span>
-              <span class="badge">Linux</span>
-              <span class="badge">Photographie</span>
-              <span class="badge">Musique</span>
-              <span class="badge">Cinéma</span>
-              <span class="badge">Cyclisme</span>
-              <span class="badge">Jardinage</span>
-            </div>
+        <!-- Expériences Professionnelles (Issu de _data/parcours.yml) -->
+        <section class="skill-card">
+          <div class="skill-header">
+            <i class="fa-solid fa-briefcase skill-icon"></i>
+            <h2>Expériences Professionnelles</h2>
           </div>
-
-        </aside>
-
-        <!-- COLONNE DE DROITE : Titre sur 2 lignes, Compétences Techniques & Expériences -->
-        <main class="cv-main">
-          
-          <!-- Titre du poste sur 2 lignes -->
-          <div class="main-title-card">
-            <h1>Technicien<br>Informatique</h1>
+          <div class="timeline">
+            {% for exp in site.data.parcours.experiences %}
+              <div class="timeline-item">
+                <div class="timeline-header">
+                  <h3>{{ exp.title }}</h3>
+                  <span class="period">{{ exp.period }}</span>
+                </div>
+                <span class="company">{{ exp.company }}</span>
+                {% if exp.tasks %}
+                  <ul class="skill-list">
+                    {% for task in exp.tasks %}
+                      <li>{{ task }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+            {% endfor %}
           </div>
+        </section>
 
-          <!-- Compétences Techniques -->
-          <section class="skill-card">
-            <div class="skill-header">
-              <i class="fa-solid fa-server skill-icon"></i>
-              <h2>Compétences Techniques</h2>
-            </div>
-            <div class="skills-grid">
-              <div class="skill-card-box">
-                <strong>Systèmes & Réseaux</strong>
-                <span>macOS, Windows, Linux (Debian, Fedora), SMB, Apache, PHP, SQL, SSH</span>
-              </div>
-              <div class="skill-card-box">
-                <strong>Parc & Virtualisation</strong>
-                <span>Jamf Pro (MDM), WDS, Proxmox, NAS Synology DSM, Active Directory</span>
-              </div>
-              <div class="skill-card-box">
-                <strong>Support & Helpdesk</strong>
-                <span>N1/N2, diagnostic de pannes, GLPI, rédaction de documentations techniques</span>
-              </div>
-              <div class="skill-card-box">
-                <strong>PAO & Web</strong>
-                <span>Suite Adobe, HTML5/CSS, WordPress, Scripts XML (automatisation)</span>
-              </div>
-            </div>
-          </section>
+      </main>
 
-          <!-- Expériences Professionnelles -->
-          <section class="skill-card">
-            <div class="skill-header">
-              <i class="fa-solid fa-briefcase skill-icon"></i>
-              <h2>Expériences Professionnelles</h2>
-            </div>
-            <div class="timeline">
-              
-              <div class="timeline-item">
-                <div class="timeline-header">
-                  <h3>Technicien Informatique</h3>
-                  <span class="period">Déc. 2025 &gt; Mars 2026</span>
-                </div>
-                <span class="company">EPSM, Metz Jury</span>
-                <ul class="skill-list">
-                  <li>Déploiement de postes (parc de 800 Mac) et enrôlement via Jamf Pro.</li>
-                  <li>Support macOS, automatisation des configurations et sécurisation.</li>
-                </ul>
-              </div>
-
-              <div class="timeline-item">
-                <div class="timeline-header">
-                  <h3>Technicien Support Informatique</h3>
-                  <span class="period">2023 &gt; 2024</span>
-                </div>
-                <span class="company">Pixel Image - Groupe TEMA, Metz</span>
-                <ul class="skill-list">
-                  <li>Gestion du parc informatique (Mac), maintenance et assistance (GLPI).</li>
-                </ul>
-              </div>
-
-              <div class="timeline-item">
-                <div class="timeline-header">
-                  <h3>Rédacteur Graphiste</h3>
-                  <span class="period">2011 &gt; 2024</span>
-                </div>
-                <span class="company">Pixel Image - Groupe TEMA, Metz</span>
-                <ul class="skill-list">
-                  <li>Automatisation de bases de données (scripts, XML) et mise en page automatique.</li>
-                  <li>Conception de newsletters HTML/CSS et motion design.</li>
-                </ul>
-              </div>
-
-              <div class="timeline-item">
-                <div class="timeline-header">
-                  <h3>Infographiste</h3>
-                  <span class="period">2000 &gt; 2009</span>
-                </div>
-                <span class="company">Alliances Graphic, Montigny-lès-Metz</span>
-                <ul class="skill-list">
-                  <li>Préparation prépresse, mise en page catalogues et gestion de la chaîne graphique.</li>
-                </ul>
-              </div>
-
-            </div>
-          </section>
-
-        </main>
-
-      </div>
-    </page>
-  </div>
+    </div>
+  </page>
+</div>
 
   <script>
     const button = document.getElementById("download-button");

@@ -1,0 +1,89 @@
+competence_cards:
+  - title: "Systèmes & Réseaux"
+    icon: "fa-solid fa-server"
+    intro: "Gestion, déploiement et support du parc informatique, intérêt marqué pour l'administration système et la cybersécurité."
+    is_details: false
+    groups:
+      - name: "Systèmes d'exploitation & Environnements"
+        badges:
+          - "Linux (Arch, Debian, Fedora, NixOS)"
+          - "macOS (Administration & Support)"
+          - "Windows 10 / 11"
+          - "Windows Server 2022"
+      - name: "Gestion de parc & MDM"
+        badges:
+          - "Jamf Pro (Apple MDM)"
+          - "WDS (Windows Deployment)"
+          - "GLPI (Helpdesk & Inventaire)"
+      - name: "Virtualisation, Homelab & Stockage"
+        badges:
+          - "Proxmox VE"
+          - "Synology DSM (NAS)"
+          - "Active Directory"
+          - "Docker / Conteneurs"
+      - name: "Réseaux & Protocoles"
+        badges:
+          - "TCP/IP & DNS"
+          - "SMB / NFS"
+          - "Apache / PHP / SQL"
+          - "SSH & Sécurité de base"
+          - "Cisco Packet Tracer"
+
+  - title: "Web & Intégration"
+    icon: "fa-solid fa-code"
+    intro: "Conception de sites web, intégration et scripts d'automatisation."
+    groups:
+      - name: "Technologies"
+        badges:
+          - "HTML5 / CSS3"
+          - "WordPress"
+          - "Jekyll"
+          - "XML"
+          - "Scripting Shell / Data Merge"
+
+  - title: "IA Générative & Vibe Coding"
+    icon: "fa-solid fa-brain"
+    intro: "Exploitation de modèles locaux et workflows d'assistance par intelligence artificielle."
+    groups:
+      - name: "IA Générative & Visuelle"
+        badges:
+          - "Stable Diffusion"
+          - "Prompt"
+          - "Workflows Visuels IA"
+      - name: "Modèles & Exécution Locale"
+        badges:
+          - "LM Studio"
+          - "LLM en local"
+          - "Souveraineté Numérique"
+      - name: "Développement & Assistants"
+        badges:
+          - "Vibe Coding"
+          - "OpenCode / Assistants de code"
+      - name: "Savoir-faire"
+        description: "Configuration, déploiement et exécution d'intelligences artificielles sur matériel dédié (LLM et imagerie avec Stable Diffusion), afin d'assurer la souveraineté numérique, la confidentialité des données et la gestion des ressources. Intégration de l'IA dans la création graphique et adoption des méthodes de développement modernes (Vibe Coding)."
+
+  - title: "Graphismes, Motion & Photos"
+    icon: "fa-solid fa-pen-nib"
+    intro: "Création graphique print/web, animations et retouche photographique."
+    groups:
+      - name: "Graphiste print/web"
+        badges:
+          - "Photoshop"
+          - "InDesign"
+          - "Illustrator"
+          - "Figma"
+      - name: "Savoir-faire"
+        description: "Connaissance approfondie des outils de création graphique tels qu'Adobe Photoshop, Illustrator, InDesign pour le print et des outils comme Adobe XD ou Figma pour le web.<br>> Une bonne connaissance des principes fondamentaux du design graphique, tels que la typographie, la couleur, la mise en page et la composition, pour créer des designs esthétiques et fonctionnels.<br>> Préparation des fichiers pour l'impression (résolution, formats de fichier, marges, etc.) et pour le web (optimisation des images, responsive design, etc.)"
+      - name: "Motion Design"
+        badges:
+          - "After Effects"
+          - "Premiere Pro"
+          - "Cinema 4D"
+      - name: "Savoir-faire"
+        description: "Connaissance approfondie de logiciels tels qu'Adobe After Effects et Cinema 4D. Ces outils permettent de créer des animations, des effets visuels et des compositions dynamiques.<br>> Bonne connaissance des principes fondamentaux de l'animation, tels que le timing, le mouvement, cruciale pour créer des animations fluides et engageantes. Cela inclut également la capacité à raconter une histoire à travers le mouvement.<br>> Capacité créative pour concevoir des animations visuellement attrayantes. Cela implique de savoir jouer avec la couleur, la typographie, la composition et le rythme pour captiver l'audience."
+      - name: "Photographies"
+        badges:
+          - "Lightroom"
+          - "Photoshop"
+      - name: "Savoir-faire"
+        description: "Compréhension des réglages de l'appareil photo (ouverture, vitesse d'obturation, ISO) et des principes de composition pour capturer des images de qualité.<br>> Compétence dans l'utilisation de logiciels comme Adobe Lightroom ou Photoshop pour retoucher et améliorer les photos après la prise de vue."

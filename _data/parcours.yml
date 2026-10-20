@@ -1,0 +1,78 @@
+soft_skills:
+  - Autodidacte
+  - Autonome
+  - Curieux
+  - Capacité d’adaptation
+  - Esprit d'équipe
+
+interests:
+  - name: "Dépannage informatique"
+    outline: true
+  - name: "Linux "
+    outline: true
+  - name: "Open Source"
+    outline: true
+  - name: "homelab"
+    outline: true
+  - name: "Raspberry Pi"
+    outline: true
+  - name: "Proxmox"
+    outline: true
+  - name: "Photo numériques"
+    outline: true
+  - name: "Vélo"
+    outline: true
+
+experiences:
+  - title: "Technicien Informatique"
+    company: "EPSM (Metz Jury)"
+    period: "Déc. 2025 > Mars 2026"
+    tasks:
+      - "Déploiement et sécurisation de postes de travail (parc de <strong>800 Mac</strong>)."
+      - "Gestion centralisée et enrôlement via <strong>Jamf Pro (MDM)</strong>."
+      - "Support niveau 1/2 macOS et automatisation des configurations."
+      - "Optimisation et sécurisation des postes de travail."
+
+  - title: "Technicien Informatique"
+    company: "Pixel Image - Groupe TEMA (Metz)"
+    period: "2023 > 2024"
+    tasks:
+      - "Gestion du parc informatique <strong>Mac</strong>."
+      - "Maintenance matériel et logiciel, assistance utilisateurs."
+      - "Suivi et résolution d’incidents"
+      - "Configuration postes & périphériques"
+
+  - title: "Graphiste Print/Web"
+    company: "Pixel Image - Groupe TEMA (Metz)"
+    period: "2011 > 2024"
+    tasks:
+      - "Réalisation de supports de communication print/web."
+      - "Automatisation de bases de données (Scripts, XML) pour mises en pages automatiques."
+      - "Création de newsletters HTML/CSS."
+      - "Motion design & intégration vidéo."
+
+  - title: "Infographiste"
+    company: "Alliances Graphic (Montigny-lès-Metz)"
+    period: "2000 > 2009"
+    tasks:
+      - "Mises en pages, réalisations de tous documents imprimés (plaquettes, brochures, catalogues, affiches…)"
+      - "Numérisations"
+      - "Retouches d’images, retouches colorimétriques / chromies"
+      - "Flashage films pour impressions"
+      - "Épreuves de contrôles (cromalin), épreuves numériques"
+      - "Gestion globale de la chaîne graphique et préparation prépresse."
+
+formations:
+  - title: "Diplôme Technicien Informatique"
+    company: "OpenClassrooms"
+    period: "2026"
+  - title: "Formations"
+    company: "Formation diplômante en autonomie<br>
+www.openclassrooms.com"
+    period: "2025 > 2026"
+  - title: "BAC Arts Graphiques"
+    company: "CFA Ernest Meyer (Metz) / Alliances Graphic"
+    period: "1996 > 2000"
+  - title: "Diplôme d'Infographie"
+    company: "École d'infographie (Angoulême)"
+    period: "1995 > 1996"

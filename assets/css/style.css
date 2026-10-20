@@ -416,12 +416,13 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  margin-bottom: 1rem;
   border-bottom: 1px solid #f0f0f0;
   padding-bottom: 0.5rem;
 }
 
 .skill-icon {
+  display: flex;
+  align-items: center;
   font-size: 1.5rem;
   color: #0e8eb0;
 }
@@ -989,6 +990,7 @@ a:hover {
 .skill-card {
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
   will-change: transform, box-shadow;
+  border-left: 2px solid #13c4ee;
 }
 
 /* Effet au survol : la carte monte de -6px et l'ombre s'intensifie */
@@ -1349,7 +1351,6 @@ a:hover {
 
 details.skill-card {
   background: #ffffff;
-  border: 1px solid #eaeaea;
   border-radius: 10px;
   padding: 1.2rem 1.5rem;
   margin-bottom: 1.5rem;
@@ -1361,6 +1362,7 @@ details.skill-card[open] {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
+/* Conteneur principal du header de la carte */
 details.skill-card summary.skill-header {
   list-style: none; /* Supprime le triangle par défaut */
   cursor: pointer;
@@ -1377,8 +1379,16 @@ details.skill-card summary.skill-header::-webkit-details-marker {
   display: none;
 }
 
-/* Agencement interne du titre et de l'icône */
-.skill-title-wrapper {
+/* Structure en colonne pour empiler le titre et l'intro */
+.skill-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 100%;
+}
+
+/* Ligne contenant l'icône face au titre h2 */
+.skill-title-row {
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -1388,10 +1398,21 @@ details.skill-card summary.skill-header h2 {
   margin: 0;
   font-size: 1.25rem;
   transition: color 0.2s ease;
+  line-height: 1;      /* Assure la même hauteur de ligne que l'icône */
 }
 
 details.skill-card summary.skill-header:hover h2 {
   color: var(--primary-color, #0b4353);
+}
+
+/* Style de la description d'introduction : plus petite et gris léger */
+.section-intro {
+  margin: 0;
+  padding-left: 38px;
+  font-size: 0.85rem;
+  color: #6c757d; /* Gris léger */
+  line-height: 1.4;
+  font-weight: normal;
 }
 
 /* Ajout et style du chevron animé avec FontAwesome sur le header principal */
