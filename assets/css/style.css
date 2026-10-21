@@ -128,7 +128,10 @@ a:hover {
 }
 
 .nav-menu a:hover {
-  opacity: 0.7;
+  opacity: 1 !important;
+/*  color: #a0c4d0; /* Par exemple, un joli bleu clair au survol à la place de la transparence */*/
+  text-decoration: underline;
+
 }
 
 .social-links {
@@ -1815,42 +1818,38 @@ margin-bottom: 0.08mm;
 }
 
 /* =========================================================
- *   TOOLTIP / POPUP SOURIS PERSONNALISÉ (À droite)
- *   ========================================================= */
-
-/* Référence de positionnement */
-.custom-tooltip {
+ *  TOOLTIPS PERSONNALISÉS (Opacité 100% forcée)
+ *  ========================================================= */
+.custom-tooltip,
+.custom-tooltip-right {
   position: relative;
   cursor: pointer;
 }
 
-/* Le conteneur du popup (positionné à droite) */
+/* --- 1. TOOLTIP AU-DESSUS (Réseaux sociaux) --- */
 .custom-tooltip::before {
   content: attr(data-tooltip);
   position: absolute;
-  top: 50%;
-  left: calc(100% + 12px); /* Se place à droite du lien avec un petit espace */
-  transform: translateY(-50%) translateX(-6px); /* Animation de translation horizontale */
+  bottom: 150%;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
 
-  /* Largeur fixe et texte centré pour un rendu propre */
-  width: 220px;
-  text-align: left; /* Ou center selon vos préférences */
+  width: max-content;
+  max-width: 220px;
+  text-align: center;
 
-  /* Noir pur opaque */
-  background-color: #000000;
-  color: #ffffff;
+  /* Noir pur forcé à 100% d'opacité */
+  background-color: #000000 !important;
+  color: #ffffff !important;
 
-  padding: 0.6rem 0.8rem;
+  padding: 0.5rem 0.8rem;
   border-radius: 6px;
-  font-size: 0.82rem;
+  font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
   font-weight: 500;
   line-height: 1.4;
-
-  /* Autorise vos retours à la ligne faits avec Entrée */
   white-space: pre-line;
-
-  /* Ombre portée */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Ombre légèrement renforcée pour un meilleur contraste */
 
   opacity: 0;
   visibility: hidden;
@@ -1859,8 +1858,66 @@ margin-bottom: 0.08mm;
   z-index: 9999;
 }
 
-/* La petite flèche sur le côté gauche du popup (pointe vers le lien) */
 .custom-tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+
+  border-width: 6px;
+  border-style: solid;
+  border-color: #000000 transparent transparent transparent;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 9999;
+}
+
+/* Forçage de l'opacité à 1 au survol */
+.custom-tooltip:hover::before,
+.custom-tooltip:hover::after {
+  opacity: 1 !important;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+
+/* --- 2. TOOLTIP SUR LA DROITE (Menu) --- */
+.custom-tooltip-right::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 12px);
+  transform: translateY(-50%) translateX(-6px);
+
+  width: max-content;
+  max-width: 220px;
+  text-align: center;
+
+  /* Noir pur forcé à 100% d'opacité */
+  background-color: #000000 !important;
+  color: #ffffff !important;
+
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: pre-line;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 9999;
+}
+
+.custom-tooltip-right::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -1869,7 +1926,6 @@ margin-bottom: 0.08mm;
 
   border-width: 6px;
   border-style: solid;
-  /* La flèche pointe vers la gauche : seul le bord droit est coloré */
   border-color: transparent #000000 transparent transparent;
 
   opacity: 0;
@@ -1879,10 +1935,48 @@ margin-bottom: 0.08mm;
   z-index: 9999;
 }
 
-/* Effet au survol : apparition et glissement fluide vers la droite */
-.custom-tooltip:hover::before,
-.custom-tooltip:hover::after {
-  opacity: 1;
+/* Forçage de l'opacité à 1 au survol */
+.custom-tooltip-right:hover::before,
+.custom-tooltip-right:hover::after {
+  opacity: 1 !important;
   visibility: visible;
   transform: translateY(-50%) translateX(0);
+}
+/* =========================================================
+ *  SOULIGNÉ ANIMÉ MODERNE (Porté par le span)
+ *  ========================================================= */
+
+.brand-panel .nav-menu a,
+.brand-panel .submenu a {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Le soulignage s'applique uniquement au span à l'intérieur du lien */
+.brand-panel .nav-menu a span,
+.brand-panel .submenu a span {
+  position: relative;
+  display: inline-block;
+}
+
+.brand-panel .nav-menu a span::after,
+.brand-panel .submenu a span::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px; /* Espace entre le texte et la ligne */
+  left: 0;
+  background-color: #ffffff; /* Ligne blanche sur le fond bleu */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.35s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+/* Animation fluide de gauche à droite au survol */
+.brand-panel .nav-menu a:hover span::after,
+.brand-panel .submenu a:hover span::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

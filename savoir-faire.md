@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Compétences techniques"
-description: "Savoir-faire en Systèmes, Réseaux, Infographie, Web, Motion Design et Photographie."
+description: "Savoir-faire en Systèmes & Réseaux, Infographie, Web, Motion Design et Photographie."
 permalink: /savoir-faire/
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Mon parcours"
-description: "Parcours professionnel, formations et compétences d'Arnaud PINOT, Technicien Informatique."
+description: "Découvrez mon parcours professionnel, formations et compétences."
 permalink: /mon-parcours/
 ---
 

@@ -62,7 +62,7 @@ competence_cards:
       - name: "Savoir-faire"
         description: "Configuration, déploiement et exécution d'intelligences artificielles sur matériel dédié (LLM et imagerie avec Stable Diffusion), afin d'assurer la souveraineté numérique, la confidentialité des données et la gestion des ressources. Intégration de l'IA dans la création graphique et adoption des méthodes de développement modernes (Vibe Coding)."
 
-  - title: "Graphismes, Motion & Photos"
+  - title: "Graphismes, Motion-Design & Photos"
     icon: "fa-solid fa-pen-nib"
     intro: "Création graphique print/web, animations et retouche photographique."
     groups:

@@ -11,32 +11,30 @@
   <h1 class="site-title">{{ site.title }}</h1>
   <p class="site-tagline">{{ site.description }}</p>
 
-  <nav>
+<nav>
     <ul class="nav-menu">
-<!--      <li><a href="{{ '/' | relative_url }}">Accueil</a></li>-->
-      <li><a href="{{ '/savoir-faire/' | relative_url }}" class="custom-tooltip" data-tooltip="Découvrez mes compétences et mon savoir-faire">Savoir-faire</a></li>
-      <li><a href="{{ '/mon-parcours/' | relative_url }}" class="custom-tooltip" data-tooltip="Découvrez Mon parcours professionnel">Mon parcours</a></li>
+      <li><a href="{{ '/savoir-faire/' | relative_url }}" class="custom-tooltip-right" data-tooltip="Découvrez mes compétences et mon savoir-faire"><span>Savoir-faire</span></a></li>
+      <li><a href="{{ '/mon-parcours/' | relative_url }}" class="custom-tooltip-right" data-tooltip="Découvrez Mon parcours professionnel"><span>Mon parcours</span></a></li>
 
-      <!-- Si l'URL contient graphisme, photo ou motion, on garde open -->
-<li class="has-submenu {% if page.url contains 'graphisme' or page.url contains 'motion' or page.url contains 'photo' or page.url contains 'portfolio' %}open{% endif %}">        <button type="button" class="submenu-toggle">
-          Portfolio <i class="fa-solid fa-chevron-down arrow-icon"></i>
+      <li class="has-submenu {% if page.url contains 'graphisme' or page.url contains 'motion' or page.url contains 'photo' or page.url contains 'portfolio' %}open{% endif %}">
+        <button type="button" class="submenu-toggle">
+          <span>Portfolio</span> <i class="fa-solid fa-chevron-down arrow-icon"></i>
         </button>
         <ul class="submenu">
-          <li><a href="{{ '/graphismes/' | relative_url }}" class="custom-tooltip" data-tooltip="Découvrez mes créations graphiques et travaux d'édition.">Graphismes</a></li>
-          <li><a href="{{ '/motion-design/' | relative_url }}">Motion Design</a></li>
-          <li><a href="{{ '/photos/' | relative_url }}">Photographies</a></li>
+          <li><a href="{{ '/graphismes/' | relative_url }}" class="custom-tooltip-right" data-tooltip="Découvrez mes créations graphiques et travaux d'édition."><span>Graphismes</span></a></li>
+          <li><a href="{{ '/motion-design/' | relative_url }}" class="custom-tooltip-right" data-tooltip="Découvrez mes projets de Motion Design"><span>Motion Design</span></a></li>
+          <li><a href="{{ '/photos/' | relative_url }}" class="custom-tooltip-right" data-tooltip="Découvrez mes photographies"><span>Photographies</span></a></li>
         </ul>
       </li>
-
     </ul>
   </nav>
 
 <div class="social-links">
-    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://github.com/arnaud-pinot"  class="external-link custom-tooltip" data-tooltip="Visitez mon Github" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/arnaud-pinot/" class="external-link custom-tooltip" data-tooltip="Mon linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
     <a href="#" aria-label="Mastodon"><i class="fa-brands fa-mastodon"></i></a>
-<a href="{{ '/cv.html' | relative_url }}"  class="external-link custom-tooltip" data-tooltip="Téléchargez mon CV au format PDF" aria-label="Mon CV">  <i class="fa-solid fa-file-lines"></i></a>
-<a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+    <a href="{{ '/cv.html' | relative_url }}"  class="external-link custom-tooltip" data-tooltip="Téléchargez mon CV au format PDF" aria-label="Mon CV">  <i class="fa-solid fa-file-lines"></i></a>
+    <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
   </div>
 
 
