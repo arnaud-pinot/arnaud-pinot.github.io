@@ -459,7 +459,7 @@ content: '›';
 
         <!-- Profil -->
         <div class="profile-card">
-          <img src="{{ '/assets/img/Portrait1.png' | relative_url }}" alt="Arnaud PINOT" class="profile-avatar">
+          <img src="{{ '/assets/img/Portrait2.png' | relative_url }}" alt="Arnaud PINOT" class="profile-avatar">
           <h1 class="profile-name">Arnaud PINOT</h1>
         </div>
 
