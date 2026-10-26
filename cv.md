@@ -616,7 +616,7 @@ content: '›';
 
       const options = {
         margin:       0,
-        filename:     'CV_Arnaud-PINOT_(v20261021).pdf',
+        filename:     'CV_Arnaud-PINOT_(v20261026).pdf',
         image:        { type: 'jpeg', quality: 0.96 },
         html2canvas:  { 
           scale: 3.0,
