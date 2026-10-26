@@ -122,7 +122,7 @@ permalink: /cv.html
       padding-top: 11mm;
       display: flex;
       flex-direction: column;
-      gap: 13mm;
+      gap: 12mm;
       height: 296.7mm;
       box-sizing: border-box;
     }
@@ -170,7 +170,7 @@ permalink: /cv.html
     .contact-list, .diploma-list {
       list-style: none;
       font-size: 8pt;
-      line-height: 1.5;
+      line-height: 9pt;
     }
 
     .contact-list li {
@@ -187,7 +187,7 @@ permalink: /cv.html
     }
 
     .diploma-item {
-      margin-bottom: 1mm;
+      margin-bottom: 3mm;
     }
 
     .diploma-title {
@@ -233,7 +233,6 @@ permalink: /cv.html
       background: #ffffff;
       border-radius: 6px;
       padding: 2.5mm 3.5mm;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
 
     .main-title-card h1 {
@@ -444,7 +443,7 @@ content: '›';
   <!-- Barre d'action avec bouton d'exportation -->
   <div class="export-bar">
     <button class="btn-export" id="download-button">
-      <i class="fa-solid fa-file-pdf"></i> Télécharger le PDF HD (Scale 3.0)
+      <i class="fa-solid fa-file-pdf"></i> Télécharger le PDF HD
     </button>
   </div>
 
@@ -488,8 +487,8 @@ content: '›';
           <div class="diploma-list">
             {% for formation in site.data.parcours.formations %}
               <div class="diploma-item">
-                <div class="diploma-title">{{ formation.period }} | {{ formation.title }}</div>
-                <div class="diploma-school">{{ formation.company }} </div>
+                <div class="diploma-title">{{ formation.title }}</div>
+                <div class="diploma-school">{{ formation.period }} | {{ formation.company }} </div>
               </div>
             {% endfor %}
           </div>

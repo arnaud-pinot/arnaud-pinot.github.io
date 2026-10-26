@@ -18,7 +18,7 @@ interests:
     outline: true
   - name: "Proxmox"
     outline: true
-  - name: "Photo numériques"
+  - name: "Photos numériques"
     outline: true
   - name: "Vélo"
     outline: true
@@ -28,7 +28,7 @@ experiences:
     company: "EPSM (Metz Jury)"
     period: "Déc. 2025 > Mars 2026"
     tasks:
-      - "Déploiement et sécurisation de postes de travail (parc de <strong>800 Mac</strong>)."
+      - "Déploiement de postes de travail (parc de <strong>800 Mac</strong>)."
       - "Gestion centralisée et enrôlement via <strong>Jamf Pro (MDM)</strong>."
       - "Support niveau 1/2 macOS et automatisation des configurations."
       - "Optimisation et sécurisation des postes de travail."
@@ -55,9 +55,8 @@ experiences:
     company: "Alliances Graphic (Montigny-lès-Metz)"
     period: "2000 > 2009"
     tasks:
-      - "Mises en pages, réalisations de tous documents imprimés (plaquettes, brochures, catalogues, affiches…)"
-      - "Numérisations"
-      - "Retouches d’images, retouches colorimétriques / chromies"
+      - "Mises en pages, réalisations de tous documents imprimés <br>(plaquettes, brochures, catalogues, affiches…)"
+      - "Numérisations, retouches d’images, retouches colorimétriques / chromies"
       - "Flashage films pour impressions"
       - "Épreuves de contrôles (cromalin), épreuves numériques"
       - "Gestion globale de la chaîne graphique et préparation prépresse."
@@ -66,13 +65,16 @@ formations:
   - title: "Diplôme Technicien Informatique"
     company: "OpenClassrooms"
     period: "2026"
-  - title: "Formations"
+  - title: "Formation Technicien Informatique"
     company: "Formation diplômante en autonomie<br>
 www.openclassrooms.com"
-    period: "2025 > 2026"
+    period: "2025 › 2026"
+  - title: "Formation HTML5 / CSS3"
+    company: " CRECI Formation (Jouy&#8209;aux&#8209;Arches)"
+    period: "2010"
   - title: "BAC Arts Graphiques"
     company: "CFA Ernest Meyer (Metz) / Alliances Graphic"
-    period: "1996 > 2000"
+    period: "1996 › 2000"
   - title: "Diplôme d'Infographie"
     company: "École d'infographie (Angoulême)"
-    period: "1995 > 1996"
+    period: "1995 › 1996"

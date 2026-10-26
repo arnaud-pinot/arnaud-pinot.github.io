@@ -15,7 +15,7 @@ competence_cards:
           - "Jamf Pro (Apple MDM)"
           - "WDS (Windows Deployment)"
           - "GLPI (Helpdesk & Inventaire)"
-      - name: "Virtualisation, Homelab & Stockage"
+      - name: "Virtualisation & Stockage"
         badges:
           - "Proxmox VE"
           - "Synology DSM (NAS)"
@@ -62,7 +62,7 @@ competence_cards:
       - name: "Savoir-faire"
         description: "Configuration, déploiement et exécution d'intelligences artificielles sur matériel dédié (LLM et imagerie avec Stable Diffusion), afin d'assurer la souveraineté numérique, la confidentialité des données et la gestion des ressources. Intégration de l'IA dans la création graphique et adoption des méthodes de développement modernes (Vibe Coding)."
 
-  - title: "Graphismes, Motion-Design & Photos"
+  - title: "Graphismes, Motion-Design & Photographies"
     icon: "fa-solid fa-pen-nib"
     intro: "Création graphique print/web, animations et retouche photographique."
     groups:
