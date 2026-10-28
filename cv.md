@@ -453,102 +453,122 @@ content: '›';
   <page size="A4" id="cv-content">
     <div class="cv-layout">
 
-      <!-- COLONNE DE GAUCHE -->
-      <aside class="cv-sidebar">
+<!-- COLONNE DE GAUCHE -->
+<aside class="cv-sidebar">
 
-        <!-- Profil -->
-        <div class="profile-card">
-          <img src="{{ '/assets/img/Portrait2.png' | relative_url }}" alt="Arnaud PINOT" class="profile-avatar">
-          <h1 class="profile-name">Arnaud PINOT</h1>
+  <!-- Profil -->
+  <div class="profile-card">
+    <img src="{{ '/assets/img/Portrait2.png' | relative_url }}" alt="Arnaud PINOT" class="profile-avatar">
+    <h1 class="profile-name">Arnaud PINOT</h1>
+  </div>
+
+  <!-- Coordonnées -->
+  <div class="sidebar-block">
+    <h3></h3>
+    <ul class="contact-list">
+      <li><i class="fa-solid fa-location-dot"></i> 17, rue de Fey 57685 Augny</li>
+      <li><i class="fa-solid fa-car"></i> Permis B & Véhicule</li>
+      <li><i class="fa-solid fa-envelope"></i> arnaud.pinot@gmail.com</li>
+      <li><i class="fa-solid fa-phone"></i> 07 82 78 29 76</li>
+    </ul>
+  </div>
+  
+  <!-- Coordonnées -->
+  <div class="sidebar-block">
+    <h3>Portfolio</h3>
+    <ul class="contact-list">
+        <li><i class="fa-solid fa-globe"></i> <a href="https://arnaud-pinot.github.io" target="_blank">https://arnaud-pinot.github.io</a></li>
+    </ul>
+  </div>
+
+  <!-- Formations (Issu de _data/parcours.yml) -->
+  <div class="sidebar-block">
+    <h3>Formations & Diplômes</h3>
+    <div class="diploma-list">
+      {% for formation in site.data.parcours.formations %}
+        <div class="diploma-item">
+          <div class="diploma-title">{{ formation.title }}</div>
+          <div class="diploma-school">{{ formation.period }} | {{ formation.company }} </div>
         </div>
+      {% endfor %}
+    </div>
+  </div>
 
-        <!-- Coordonnées -->
-        <div class="sidebar-block">
-          <h3></h3>
-          <ul class="contact-list">
-            <li><i class="fa-solid fa-location-dot"></i> 17, rue de Fey 57685 Augny</li>
-            <li><i class="fa-solid fa-car"></i> Permis B & Véhicule</li>
-            <li><i class="fa-solid fa-envelope"></i> arnaud.pinot@gmail.com</li>
-            <li><i class="fa-solid fa-phone"></i> 07 82 78 29 76</li>
-          </ul>
-        </div>
-        
-        <!-- Coordonnées -->
-        <div class="sidebar-block">
-          <h3>Portfolio</h3>
-          <ul class="contact-list">
-             <li><i class="fa-solid fa-globe"></i> <a href="https://arnaud-pinot.github.io" target="_blank">https://arnaud-pinot.github.io</a></li>
-          </ul>
-        </div>
+  <!-- Soft Skills (Issu de _data/parcours.yml) -->
+  <div class="sidebar-block">
+    <h3>Soft Skills</h3>
+    <div class="badge-container">
+      {% for skill in site.data.parcours.soft_skills %}
+        <span class="badge">{{ skill }}</span>
+      {% endfor %}
+    </div>
+  </div>
 
-        <!-- Formations (Issu de _data/parcours.yml) -->
-        <div class="sidebar-block">
-          <h3>Formations & Diplômes</h3>
-          <div class="diploma-list">
-            {% for formation in site.data.parcours.formations %}
-              <div class="diploma-item">
-                <div class="diploma-title">{{ formation.title }}</div>
-                <div class="diploma-school">{{ formation.period }} | {{ formation.company }} </div>
-              </div>
-            {% endfor %}
-          </div>
-        </div>
+  <!-- Centres d'intérêt (Issu de _data/parcours.yml) -->
+  <div class="sidebar-block">
+    <h3>Centres d'intérêt</h3>
+    <div class="badge-container">
+      {% for interest in site.data.parcours.interests %}
+        <span class="badge">{{ interest.name }}</span>
+      {% endfor %}
+    </div>
+  </div>
 
-        <!-- Soft Skills (Issu de _data/parcours.yml) -->
-        <div class="sidebar-block">
-          <h3>Soft Skills</h3>
-          <div class="badge-container">
-            {% for skill in site.data.parcours.soft_skills %}
-              <span class="badge">{{ skill }}</span>
-            {% endfor %}
-          </div>
-        </div>
+</aside>
 
-        <!-- Centres d'intérêt (Issu de _data/parcours.yml) -->
-        <div class="sidebar-block">
-          <h3>Centres d'intérêt</h3>
-          <div class="badge-container">
-            {% for interest in site.data.parcours.interests %}
-              <span class="badge">{{ interest.name }}</span>
-            {% endfor %}
-          </div>
-        </div>
+  <!-- COLONNE DE DROITE -->
+  <main class="cv-main">
 
-      </aside>
+    <!-- Titre du poste -->
+    <div class="main-title-card">
+      <h1>Technicien<br>Informatique</h1>
+    </div>
 
-      <!-- COLONNE DE DROITE -->
-      <main class="cv-main">
+<!-- Compétences Techniques -->
+<section class="skill-card">
+  <div class="skill-header">
+    <i class="fa-solid fa-server skill-icon"></i>
+    <h2>Compétences Techniques</h2>
+  </div>
 
-        <!-- Titre du poste -->
-        <div class="main-title-card">
-          <h1>Technicien<br>Informatique</h1>
-        </div>
+<div class="skills-timeline">
+  {% for card in site.data.savoir_faire.competence_cards %}
+    <div class="skill-category-block">
+      <div class="skill-category-title">{{ card.title }}</div>
+      <ul class="skill-category-list">
+        {% for group in card.groups %}
+          {% if group.badges %}
+            <li>
+              <strong>{{ group.name }} :</strong>
+              
+              <!-- Étape 1 : On compte combien de badges vont réellement s'afficher -->
+              {% assign total_to_print = 0 %}
+              {% for badge in group.badges %}
+                {% unless badge == "Souveraineté Numérique" %}
+                  {% assign total_to_print = total_to_print | plus: 1 %}
+                {% endunless %}
+              {% endfor %}
+              
+              <!-- Pour exclure d'autres badges à l'avenir, rajoute simplement : or badge == "Nom du badge" -->
+              <!-- Étape 2 : On affiche les badges, virgules, et le point collé au dernier mot -->
+              {% if total_to_print > 0 %}
+                {% assign current_index = 0 %}
+                {% for badge in group.badges %}
+                  {% unless badge == "Souveraineté Numérique" %}
+                    {% assign current_index = current_index | plus: 1 -%}
+                    {{- badge -}}{% if current_index < total_to_print %}, {%- else -%}.{%- endif %}
+                  {% endunless %}
+                {% endfor %}
+              {% endif %}
 
-        <!-- Compétences Techniques -->
-        <section class="skill-card">
-          <div class="skill-header">
-            <i class="fa-solid fa-server skill-icon"></i>
-            <h2>Compétences Techniques</h2>
-          </div>
-
-          <div class="skills-timeline">
-            {% for card in site.data.savoir_faire.competence_cards %}
-              <div class="skill-category-block">
-                <div class="skill-category-title">{{ card.title }}</div>
-                <ul class="skill-category-list">
-                  {% for group in card.groups %}
-                    {% if group.badges %}
-                      <li>
-                        <strong>{{ group.name }} :</strong>
-                        {{ group.badges | join: ", " }}
-                      </li>
-                    {% endif %}
-                  {% endfor %}
-                </ul>
-              </div>
-            {% endfor %}
-          </div>
-        </section>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+</div>
+</section>
 
         <!-- Expériences Professionnelles (Issu de _data/parcours.yml) -->
         <section class="skill-card">
@@ -616,7 +636,7 @@ content: '›';
 
       const options = {
         margin:       0,
-        filename:     'CV_Arnaud-PINOT_(v20261026).pdf',
+        filename:     'CV_Arnaud-PINOT_(v20261028).pdf',
         image:        { type: 'jpeg', quality: 0.96 },
         html2canvas:  { 
           scale: 3.0,
