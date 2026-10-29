@@ -435,6 +435,12 @@ content: '›';
   color: var(--primary-color);
   font-weight: 700;
 }
+
+.diploma-school .separator {
+    color: var(--secondary-color);
+    font-weight: 900;
+}
+
   </style>
 </head>
 <body>
@@ -487,7 +493,7 @@ content: '›';
       {% for formation in site.data.parcours.formations %}
         <div class="diploma-item">
           <div class="diploma-title">{{ formation.title }}</div>
-          <div class="diploma-school">{{ formation.period }} | {{ formation.company }} </div>
+          <div class="diploma-school">{{ formation.period }} <span class="separator">|</span> {{ formation.company }} </div>
         </div>
       {% endfor %}
     </div>
@@ -635,7 +641,7 @@ content: '›';
 
       const options = {
         margin:       0,
-        filename:     'CV_Arnaud-PINOT_(v20261028).pdf',
+        filename:     'CV_Arnaud-PINOT_(v20261029).pdf',
         image:        { type: 'jpeg', quality: 0.96 },
         html2canvas:  { 
           scale: 3.0,

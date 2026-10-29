@@ -48,20 +48,26 @@ competence_cards:
           - "XML"
           - "Scripting Shell / Data Merge"
 
-  - title: "IA Générative & Vibe Coding"
+  - title: "IA Générative & Déploiement local"
     icon: "fa-solid fa-brain"
     intro: "Exploitation de modèles locaux et workflows d'assistance par intelligence artificielle."
     groups:
+      - name: "Modèles de langage locaux"
+        badges:
+          - "Ollama"
+          - "llama.cpp"
+          - "LM Studio"
+          - "LLM en local"
+          - "Souveraineté Numérique"
+      - name: "Déploiement et exécution"
+        badges:
+          - "Installation sur serveur Linux"
+          - "Docker"
       - name: "IA Générative & Visuelle"
         badges:
           - "Stable Diffusion"
           - "Prompt"
           - "Workflows Visuels IA"
-      - name: "Modèles & Exécution Locale"
-        badges:
-          - "LM Studio"
-          - "LLM en local"
-          - "Souveraineté Numérique"
       - name: "Développement & Assistants"
         badges:
           - "Vibe Coding"
