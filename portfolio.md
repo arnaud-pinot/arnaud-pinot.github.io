@@ -9,7 +9,7 @@ permalink: /portfolio/
 
   <!-- Carte 1 : Graphisme -->
   <article class="card">
-    <a href="{{ '/graphisme/' | relative_url }}">
+    <a href="{{ '/graphismes/' | relative_url }}">
       <div class="card-image">
         <img src="/assets/img/480x360-neret-icotour.jpg" alt="Portfolio Graphisme">
       </div>
