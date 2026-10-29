@@ -2,9 +2,9 @@
 layout: project
 title: "CMA"
 subtitle: "Motion Design & Communication"
-client: "CMA Grand Est"
-date_publi: "2024"
-tools: ["After Effects", "Illustrator"]
+client: "Chambre de Métiers et de l'Artisanat de la Moselle"
+date_publi: "2020"
+tools: ["After Effects", "Cinema4D", "Premiere Pro", "Photoshop", "Illustrator"]
 thumb: "/assets/img/480x360-cma.jpg"
 poster: "/assets/video/CMA_poster.jpg"
 video: "https://arnaud-pinot.pages-perso.free.fr/portfolio/video/CMA.mp4"

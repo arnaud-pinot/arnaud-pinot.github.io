@@ -1,7 +1,7 @@
 competence_cards:
   - title: "Systèmes & Réseaux"
     icon: "fa-solid fa-server"
-    intro: "Gestion, déploiement et support du parc informatique, intérêt marqué pour l'administration système et la cybersécurité."
+    intro: "Gestion, déploiement et support du parc informatique, intérêt pour l'administration système et la cybersécurité."
     is_details: false
     groups:
       - name: "Systèmes d'exploitation & Environnements"
@@ -10,24 +10,31 @@ competence_cards:
           - "macOS (Administration & Support)"
           - "Windows 10 / 11"
           - "Windows Server 2022"
-      - name: "Gestion de parc & MDM"
+      - name: "Support & Gestion de parc"
         badges:
-          - "Jamf Pro (Apple MDM)"
-          - "WDS (Windows Deployment)"
+          - "Jamf Pro (gestion des appareils Apple – MDM)"
+          - "WDS (déploiement Windows)"
           - "GLPI (Helpdesk & Inventaire)"
+      - name: "Réseaux & Services"
+        badges:
+          - "TCP/IP"
+          - "DNS"
+          - "SMB / NFS"
+          - "Active Directory"
+          - "Cisco Packet Tracer"
+          - "SSH"
+          - "Notions de sécurité réseau"
+      - name: "Serveur Web & bases de données"
+        badges:
+          - "Apache"
+          - "PHP"
+          - "SQL"
+
       - name: "Virtualisation & Stockage"
         badges:
           - "Proxmox VE"
           - "Synology DSM (NAS)"
-          - "Active Directory"
-          - "Docker / Conteneurs"
-      - name: "Réseaux & Protocoles"
-        badges:
-          - "TCP/IP & DNS"
-          - "SMB / NFS"
-          - "Apache / PHP / SQL"
-          - "SSH & Sécurité de base"
-          - "Cisco Packet Tracer"
+          - "Docker et conteneurs"
 
   - title: "Web & Intégration"
     icon: "fa-solid fa-code"

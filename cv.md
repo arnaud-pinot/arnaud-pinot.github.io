@@ -212,9 +212,8 @@ permalink: /cv.html
       color: #ffffff;
       font-weight: 600;
       font-size: 8pt;
-      padding: 0.08rem 0.3rem;
+      padding: 0.08rem 0.4rem;
       border-radius: 8pt;
-      border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     /* ================= COLONNE DE DROITE : CARTES DU PORTFOLIO ================= */
